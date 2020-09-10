@@ -1,0 +1,12 @@
+---
+title: "Report Title"
+subtitle: "Client Name"
+date: "MMMM DD, 20YY"
+output:
+  word_document:
+    reference_docx: cover-ref.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```

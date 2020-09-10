@@ -1,0 +1,43 @@
+---
+output: 
+  word_document:
+    reference_docx: G:/OW-ACTUARIAL/R Tools/R Templates/docx/body-ref.docx
+---
+
+```{r setup, include=FALSE}
+source('G:/OW-ACTUARIAL/R Tools/R Client/project/src/00.01 control.R', 
+  echo = TRUE)
+```
+
+# Executive Summary (Heading 1)
+
+## Purpose and Scope (Heading 2)
+
+## Actuarial Findings
+
+## Relevant Comments
+
+### Heading 3
+#### DONT USE Heading 4 DONT USE
+##### DONT USE Heading 5 DONT USE
+###### Use Heading 6 for Captions
+
+* bullet
+
+    * sub-bullet
+    
+        * sub-bullet
+        
+* bullet
+
+    continued (list sub)
+
+
+
+
+```{r child = 'G:/OW-ACTUARIAL/R Tools/R Templates/rmd/5_R Packages.Rmd'}
+```
+```{r child = 'G:/OW-ACTUARIAL/R Tools/R Templates/rmd/6_Distribution and Use.Rmd'}
+```
+```{r child = 'G:/OW-ACTUARIAL/R Tools/R Templates/rmd/7_Conditions and Limitations.Rmd'}
+```

@@ -1,0 +1,27 @@
+---
+title: "Untitled"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Letters should be submitted to Erika Schulty at <eschulty@soa.org> by October 16, 2020
+
+## Title
+
+## Description
+description of the research project and how it might be used by practicing and academic actuaries now or in the future, 
+
+## Literature Review
+authors and titles in the literature review
+
+## Funding
+a rough estimate of the funding requirements, 
+
+## Other
+The ability of the applicant(s) to access any data needed, where the applicant(s) intend to present and publish, and the qualifications (including any actuarial designations and any relevant experience in industry) of the applicant(s)

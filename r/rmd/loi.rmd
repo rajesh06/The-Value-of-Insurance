@@ -1,9 +1,10 @@
 ---
 title: "Letter of Intent"
+author: 
+- Zhenkai Zhu, The University of Connecticut
+- Rajesh Sahasrabuddhe, Oliver Wyman Actuarial Consulting, Inc.
 output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+  pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -12,22 +13,41 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Letters should be submitted to Erika Schulty at <eschulty@soa.org> by October 16, 2020
 
+
 ## Title
 The Value of High-Excess Commercial Insurance (working title)
 
 ## Description
-description of the research project and how it might be used by practicing and academic actuaries now or in the future, 
+Firms use property-casualty insurance as a source of "contingent capital." That is, instead of setting aside capital to fund rare events, firms will purchase insurance. 
+
+High layer excess insurance, in particular, serves this purpose. Firms rarely access these layers, and the expected value of claims in those layers is minimal. As such, the insurance policy's primary value is that it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Our research will focus on the measurement of this value. 
+
+Our research will have a "real-world" context, which recognizes that most large firms use (consulting) actuaries to value reserves. As such, our research will also consider the effect of the process that actuaries use to establish self-insured claim reserves. Specifically, our model will consider that the property-casualty reserving process recognizes claim costs (both retained and insured) gradually. 
+
+We believe that actuaries supporting the evaluation and negotiation commercial insurance contracts will be able to use the results of our research.
+
 
 ## Literature Review
 authors and titles in the literature review  
 Most of research in this area focuses on the insurer's return on capital rather than the insured's capital. We identified and reviewed the following papers in our literature review:
 
-[Macalaster, Spencer.  Insurance as a Form of Capital. January 12, 2015](https://www.insurancejournal.com/magazines/mag-closingquote/2015/01/12/353262.htm) described the issue conceptually but without measurement and does not mention the role of teh actuary in establishing reserves.
+[Demand of Insurance under the Cost-of-Capital Premium Calculation Principle]
+
+
+[Macalaster, Spencer.  Insurance as a Form of Capital. January 12, 2015](https://www.insurancejournal.com/magazines/mag-closingquote/2015/01/12/353262.htm) described the issue conceptually but without measurement and does not mention the role of the actuary in establishing reserves.
+
+[Arrow, K.J. Uncertainty and the welfare economics of medical care. Am. Econ. Rev. 1963, 53,
+941–973.](www.uconn.edu)
+
+[Arrow, K.J. Essays in the Theory of Risk Bearing; Markham: Chicago, IL, USA, 1971.](www.uconn.edu)
 
 
 [Raviv, A. The design of optimal insurance policy. Am. Econ. Rev. 1979, 69, 84–96.](https://www.jstor.org/stable/1802499) uses utility theory to measure value for an insured.
 
 [Gollier, C. Optimal insurance of approximate losses. J. Risk Insur. 1996, 63, 369–380.](https://www.jstor.org/stable/253617) also use utility theory to measure optimize the insured retentions.
+
+[Gollier, C.; Schlesinger, H. Arrow’s theorem on the optimality of deductibles: A stochastic
+dominance approach. Econ. Theory 1996, 7, 359–363.](www.uconn.edu)
 
 [Yaari, M. The dual theory of choice under risk. Econometrica 1987, 55, 95–115.](www.uconn.edu)
 
@@ -54,4 +74,18 @@ Most of research in this area focuses on the insurer's return on capital rather 
 a rough estimate of the funding requirements, 
 
 ## Other
-The ability of the applicant(s) to access any data needed, where the applicant(s) intend to present and publish, and the qualifications (including any actuarial designations and any relevant experience in industry) of the applicant(s)
+* Will provide a practical worked example with our research. We will construct the "data" and actuarial assumptions included in that example.    
+* We intend to submit our paper to either North American Actuarial Journal or Variance.
+
+## Author Information
+* Rajesh Sahasrabuddhe is a Fellow of the Casualty Actuarial Society, an Associate of the Canadian Institute of Actuaries and a Member of the American Academy of Actuaries. He has been providing actuarial consulting services since 1995 and is an active CAS volunteer. In addition to several papers that appear in the CAS Forum, he has co-authored a paper that appears in Variance. (That paper was selected for the Variance prize.)
+
+
+
+will The ability of the applicant(s) to access any data needed, where the applicant(s) intend to present and publish, and the qualifications (including any actuarial designations and any relevant experience in industry) of the applicant(s)
+
+
+<!-- RS: contact ES -->
+<!-- RS: Description -->
+<!-- ZZ: literature review -->
+<!-- ZZ: Uconn Funding -->

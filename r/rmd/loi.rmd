@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Letter of Intent"
 output:
   pdf_document: default
   html_document:
@@ -13,12 +13,42 @@ knitr::opts_chunk$set(echo = TRUE)
 Letters should be submitted to Erika Schulty at <eschulty@soa.org> by October 16, 2020
 
 ## Title
+The Value of High-Excess Commercial Insurance (working title)
 
 ## Description
 description of the research project and how it might be used by practicing and academic actuaries now or in the future, 
 
 ## Literature Review
-authors and titles in the literature review
+authors and titles in the literature review  
+Most of research in this area focuses on the insurer's return on capital rather than the insured's capital. We identified and reviewed the following papers in our literature review:
+
+[Macalaster, Spencer.  Insurance as a Form of Capital. January 12, 2015](https://www.insurancejournal.com/magazines/mag-closingquote/2015/01/12/353262.htm) described the issue conceptually but without measurement and does not mention the role of teh actuary in establishing reserves.
+
+
+[Raviv, A. The design of optimal insurance policy. Am. Econ. Rev. 1979, 69, 84–96.](https://www.jstor.org/stable/1802499) uses utility theory to measure value for an insured.
+
+[Gollier, C. Optimal insurance of approximate losses. J. Risk Insur. 1996, 63, 369–380.](https://www.jstor.org/stable/253617) also use utility theory to measure optimize the insured retentions.
+
+[Yaari, M. The dual theory of choice under risk. Econometrica 1987, 55, 95–115.](www.uconn.edu)
+
+[Bernard, C.; He, X.D.; Yan, J.-A.; Zhou, X.Y. Optimal insurance design under rank-dependent expected utility. In Mathematical Finance; SSRN Preprint: Waterloo, Canada, 2014.](www.uconn.edu)
+
+[Swiss Solvency Test. FINMA SST Technisches Dokument, Version 2; Swiss Solvency Test: Bern, Switzerland, October 2006.](www.uconn.edu)
+
+[Wüthrich, M.V.; Bühlmann, H.; Furrer, H. Market-Consistent Actuarial Valuation, 2nd ed.; Springer: Berlin/Heidelberg, Germany, 2010.](www.uconn.edu)
+
+[Wüthrich, M.V.; Merz, M. Financial Modeling, Actuarial Valuation and Solvency in Insurance; Springer: Berlin/Heidelberg, Germany, 2013.](www.uconn.edu)
+
+[McNeil, A.J.; Frey, R.; Embrechts, P. Quantitative Risk Management: Concepts, Techniques and Tools; Princeton University Press: Princeton, NJ, USA, 2005.](www.uconn.edu)
+
+[Asimit, A.V.; Vernic, R.; Zitikis, R. Evaluating risk measures and capital allocations based on multi-losses driven by a heavy-tailed background risk: The multivariate Pareto-II model. Risks 2013, 1, 14–33.](www.uconn.edu)
+
+[Fortuin, C.M.; Kasteleyn, P.W.; Ginibre, J. Correlation inequalities on some partially ordered sets. Commun. Math. Phys. 1971, 22, 89–103.](www.uconn.edu)
+
+[Kamien, M.I.; Schwartz, N.L. Sufficient conditions in optimal control theory. J. Econ. Theory 1971, 3, 207–214.](www.uconn.edu)
+
+[Pelsser, A. Pricing in Incomplete Markets; Netspar Panel Papers, Volume 25; Tilburg University, The Netherlands, 2011.](www.uconn.edu)
+
 
 ## Funding
 a rough estimate of the funding requirements, 

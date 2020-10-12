@@ -13,76 +13,73 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Letters should be submitted to Erika Schulty at <eschulty@soa.org> by October 16, 2020
-
+<!-- Letters should be submitted to Erika Schulty at [eschulty\@soa.org](mailto:eschulty@soa.org){.email} by October 16, 2020 -->
 
 ## Title
+
 The Value of High-Excess Commercial Insurance (working title)
 
 ## Description
-Firms use property-casualty insurance as a source of "contingent capital." That is, instead of setting aside capital to fund rare events, firms will purchase insurance. 
 
-High layer excess insurance, in particular, serves this purpose. Firms rarely access these layers, and the expected value of claims in those layers is minimal. As such, the insurance policy's primary value is that it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Our research will focus on the measurement of this value. 
+Firms use property-casualty insurance as a source of "contingent capital." That is, instead of setting aside capital to fund rare but extreme events, firms will purchase insurance.
 
-Our research will have a "real-world" context, which recognizes that most large firms use (consulting) actuaries to value reserves. As such, our research will also consider the effect of the process that actuaries use to establish self-insured claim reserves. Specifically, our model will consider that the property-casualty reserving process recognizes claim costs (both retained and insured) gradually. 
+High layer excess insurance, in particular, serves this purpose. Firms rarely access these layers, and the expected value of claims in those layers is minimal. As such, the insurance policy's primary value is that it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Our research will focus on the measurement of this value.
 
-We believe that actuaries supporting the evaluation and negotiation commercial insurance contracts will be able to use the results of our research.
+Our research will have a "real-world" context, which recognizes that most large firms use (consulting) actuaries to value reserves. As such, our research will also consider the effect of the process that actuaries use to establish self-insured claim reserves. Specifically, our model will consider that the property-casualty reserving process recognizes claim costs (both retained and insured) gradually.
 
+We believe that actuaries supporting the evaluation and negotiation commercial insurance contracts - for both the insurer and the insured - will be able to use the results of our research.
 
 ## Literature Review
-Most of research in this area focuses on the insurer's return on capital rather than the insured's capital. We identified and reviewed the following papers in our literature review:
 
+Most of "capital" research in this area focuses on the insurer's return on capital rather than the protection of the insured's capital.
 
-[Macalaster, Spencer. Insurance as a Form of Capital. January 12, 2015](https://www.insurancejournal.com/magazines/mag-closingquote/2015/01/12/353262.htm) 
-described the issue conceptually but without measurement and does not mention the role of the actuary in establishing reserves.
+The research related to the insured's preference focuses on utility theory (as a function of wealth) and that research is generally presented in the context of personal insurance coverages (such as homeowners). Capital protection and wealth maximization are related concepts and utility functions (generically) quantify insurance value. However, the research we reviewed differs from our approach which seeks to quantify of one specific aspect of the value of insurance.
 
-[Arrow, K.J. Essays in the Theory of Risk Bearing; Markham: Chicago, IL, USA, 1971.](https://content.ebscohost.com/ContentServer.asp?T=P&P=AN&K=5054063&S=R&D=bth&EbscoContent=dGJyMNXb4kSeqa440dvuOLCmsEieqK5Ss664TbOWxWXS&ContentCustomer=dGJyMPGut1C0rLNRuePfgeyx83vt5OyF39%2Fs) 
-Arrow's theorem is the cornerstone of the application of expected-ulitily theory in insurance
+We identified and reviewed the following papers in our literature review:
 
-[Raviv, A. The design of optimal insurance policy. Am. Econ. Rev. 1979, 69, 84–96.](https://www.jstor.org/stable/1802499) 
-uses utility theory to measure value for an insured.
+[Macalaster, Spencer. Insurance as a Form of Capital. January 12, 2015](https://www.insurancejournal.com/magazines/mag-closingquote/2015/01/12/353262.htm) described the issue conceptually but without measurement and does not mention the role of the actuary in establishing reserves.
 
-[Gollier, C. Optimum insurance of approximate losses. J. Risk Insur. 1996, 63, 369–380.](https://www.jstor.org/stable/253617) 
-also use utility theory to measure optimize the insured retentions.
+[Arrow, K.J. Essays in the Theory of Risk Bearing; Markham: Chicago, IL, USA, 1971.](https://content.ebscohost.com/ContentServer.asp?T=P&P=AN&K=5054063&S=R&D=bth&EbscoContent=dGJyMNXb4kSeqa440dvuOLCmsEieqK5Ss664TbOWxWXS&ContentCustomer=dGJyMPGut1C0rLNRuePfgeyx83vt5OyF39%2Fs) Arrow's theorem is the cornerstone of the application of expected-ulitily theory in insurance
 
-[Yaari, M. The dual theory of choice under risk. Econometrica 1987, 55, 95–115.](https://www.jstor.org/stable/1911158) 
-the modification of epected utility theory
+[Raviv, A. The design of optimal insurance policy. Am. Econ. Rev. 1979, 69, 84--96.](https://www.jstor.org/stable/1802499) uses utility theory to measure value for an insured.
 
-[Kai A. Konrad; Stegrios Skaperds. Self-Insurance and Self-Protection: A Nonexpected Utility Analysis. The Geneva Papers on Risk and Insurance Theory, 1993-12, Vol.18 (2), p.131-146](https://www.jstor.org/stable/41953283) 
-use rank-dependent expected utility preferences to measure value for an insured
+[Gollier, C. Optimum insurance of approximate losses. J. Risk Insur. 1996, 63, 369--380.](https://www.jstor.org/stable/253617) also use utility theory to measure optimize the insured retentions.
 
-[Christophe Courbage. Self-Insurance, Self-Protection and Market Insurance within the Dual Theory of Choice. The Geneva papers on risk and insurance theory, 2001-06-01, Vol.26 (1), p.43-56](https://www.researchgate.net/publication/5221351_Self-Insurance_Self-Protection_and_Market_Insurance_within_the_Dual_Theory_of_Choice_In_The_Geneva_Papers_on_Risk_and_Insurance_Theory_26_1_43-56) 
-use dual theory to measure value for an insured 
+[Yaari, M. The dual theory of choice under risk. Econometrica 1987, 55, 95--115.](https://www.jstor.org/stable/1911158) the modification of epected utility theory
 
-[Michael Merz; Mario V. Wüthrich, "Demand of Insurance under the Cost-of-Capital Premium Calculation Principle", Risks, 2014, Vol.2(2), 226-248](https://www.mdpi.com/2227-9091/2/2/226/htm) 
-use risk premium approach to measure value for an insured
+[Kai A. Konrad; Stegrios Skaperds. Self-Insurance and Self-Protection: A Nonexpected Utility Analysis. The Geneva Papers on Risk and Insurance Theory, 1993-12, Vol.18 (2), p.131-146](https://www.jstor.org/stable/41953283) use rank-dependent expected utility preferences to measure value for an insured
 
-[Bernard, C.; He, X.D.; Yan, J.-A.; Zhou, X.Y. Optimal insurance design under rank-dependent expected utility. In Mathematical Finance; SSRN Preprint: Waterloo, Canada, 2014.](https://www.researchgate.net/publication/228293026_Optimal_Insurance_Design_Under_Rank-Dependent_Expected_Utility)
-use rank-dependent expected utility theory to measure value for an insured too
+[Christophe Courbage. Self-Insurance, Self-Protection and Market Insurance within the Dual Theory of Choice. The Geneva papers on risk and insurance theory, 2001-06-01, Vol.26 (1), p.43-56](https://www.researchgate.net/publication/5221351_Self-Insurance_Self-Protection_and_Market_Insurance_within_the_Dual_Theory_of_Choice_In_The_Geneva_Papers_on_Risk_and_Insurance_Theory_26_1_43-56) use dual theory to measure value for an insured
 
-[Laury, S.; M. Mcinnes, and J.Swarthout(2009): Insurance Decisions for Low-Probability Losses, J. Risk Uncertainty 39, 17–44.](https://www.researchgate.net/publication/225581818_Insurance_Decisions_for_Low_Probability_Losses) 
-use experimental evidence to show individual's under-insure decision for low-probability high-loss events  
+[Michael Merz; Mario V. Wüthrich, "Demand of Insurance under the Cost-of-Capital Premium Calculation Principle", Risks, 2014, Vol.2(2), 226-248](https://www.mdpi.com/2227-9091/2/2/226/htm) use risk premium approach to measure value for an insured
 
-[Kunreuther, H.; Pauly, M. (2004). Neglecting disaster: Why don’t people insure against large losses? Journal of Risk and Uncertainty, 28, 5–21.](https://www.jstor.org/stable/41761127) 
-use uitlity theory to show the reason why individuals don't insure low-probability and high-loss events
+[Bernard, C.; He, X.D.; Yan, J.-A.; Zhou, X.Y. Optimal insurance design under rank-dependent expected utility. In Mathematical Finance; SSRN Preprint: Waterloo, Canada, 2014.](https://www.researchgate.net/publication/228293026_Optimal_Insurance_Design_Under_Rank-Dependent_Expected_Utility) use rank-dependent expected utility theory to measure value for an insured too
+
+[Laury, S.; M. Mcinnes, and J.Swarthout(2009): Insurance Decisions for Low-Probability Losses, J. Risk Uncertainty 39, 17--44.](https://www.researchgate.net/publication/225581818_Insurance_Decisions_for_Low_Probability_Losses) use experimental evidence to show individual's under-insure decision for low-probability high-loss events
+
+[Kunreuther, H.; Pauly, M. (2004). Neglecting disaster: Why don't people insure against large losses? Journal of Risk and Uncertainty, 28, 5--21.](https://www.jstor.org/stable/41761127) use uitlity theory to show the reason why individuals don't insure low-probability and high-loss events
 
 ## Funding
-* The rough estimate of our funding requirement would be $15,000.
+
+-   The rough estimate of our funding requirement would be \$15,000.
 
 ## Other
-* Will provide a practical worked example with our research. We will construct the "data" and actuarial assumptions included in that example.    
-* We intend to submit our paper to either North American Actuarial Journal or Variance.
+
+-   Will provide a practical worked example with our research. We will construct the "data" and actuarial assumptions included in that example.\
+-   We intend to submit our paper to either North American Actuarial Journal or Variance.
 
 ## Author Information
-* Rajesh Sahasrabuddhe is a Fellow of the Casualty Actuarial Society, an Associate of the Canadian Institute of Actuaries and a Member of the American Academy of Actuaries. He has been providing actuarial consulting services since 1995 and is an active CAS volunteer. In addition to several papers that appear in the CAS Forum, he has co-authored a paper that appears in Variance. (That paper was selected for the Variance prize.)
 
-* Zhenkai Zhu is a master student studying at the University of Connecticut, pursuing the associate of Society of Actuary. 
+-   Rajesh Sahasrabuddhe is a Fellow of the Casualty Actuarial Society, an Associate of the Canadian Institute of Actuaries and a Member of the American Academy of Actuaries. He has been providing actuarial consulting services since 1995 and is an active CAS volunteer. In addition to several papers that appear in the CAS Forum, he has co-authored a paper that appears in Variance. (That paper was selected for the Variance prize.)
 
+-   Zhenkai Zhu is a master's degree student studying at the University of Connecticut. He is also pursuing the Associate of Society of Actuary credential.
 
-will The ability of the applicant(s) to access any data needed, where the applicant(s) intend to present and publish, and the qualifications (including any actuarial designations and any relevant experience in industry) of the applicant(s)
-
+<!-- will The ability of the applicant(s) to access any data needed, where the applicant(s) intend to present and publish, and the qualifications (including any actuarial designations and any relevant experience in industry) of the applicant(s) -->
 
 <!-- RS: contact ES -->
+
 <!-- RS: Description -->
+
 <!-- ZZ: literature review -->
+
 <!-- ZZ: Uconn Funding -->

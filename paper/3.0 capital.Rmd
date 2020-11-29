@@ -1,0 +1,19 @@
+<!-- Here are some ideas to consider. As you think through this, it might take you in additional directions. -->
+<!-- That's perfectly fine.  -->
+
+<!-- Can the insurer buyer maintain a lower level of capital? -->
+
+<!-- Consider the various loss cases: -->
+<!-- 1) No loss -->
+<!-- 2) A loss that allows the firm to continue operations.  -->
+<!--   how does the cost of capital increase as you get closer to minimum capital -->
+<!--   and what happens if you drop below the minimum capital in terms of the cost to recapitalize -->
+<!-- 3) bankruptcy -->
+<!-- What happens with capital and return on capital in each of these cases? -->
+
+<!-- How does that volatility of the three situations above affect the return on capital demanded by investors? -->
+
+# Capital Considerations
+Hello World
+
+

@@ -7,6 +7,7 @@ date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
   pdf_document: 
     fig_caption: yes
+    number_sections: true
 abstract: "Firms use property-casualty insurance as a source of contingent capital. That is, instead of setting aside capital to fund rare but extreme events, firms will purchase insurance. High layer excess insurance, in particular, serves this purpose. Firms rarely access these layers, and the expected value of claims in those layers is minimal. As such, the insurance policy's primary value is that it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. This paper describes an approach to measure this value."
 ---
 
@@ -19,3 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r child = here::here('paper', '2.0 measuring value.Rmd')}
 ```
+
+```{r child = here::here('paper', '3.0 capital.Rmd')}
+```
+
+

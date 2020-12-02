@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 <!-- Here are some ideas to consider. As you think through this, it might take you in additional directions. -->
 <!-- That's perfectly fine.  -->
 
@@ -14,6 +19,113 @@
 <!-- How does that volatility of the three situations above affect the return on capital demanded by investors? -->
 
 # Capital Considerations
-Hello World
+
+Here's the consideration for the above questions.
+
+### 1.Can the insurer buyer maintain a lower level of capital?
+
+Assets = Equity + Liabilities = Fixed Assets + Current Assets
+
+Capital = Equity + Debt = Fixed Assets + Net Working Capital(Current Assets- Current Liabilities)
+
+Under no insurance case, Net Working Capital includes $C_w$ and Reserve set aside for potential claims event.
+
+About S, in the notation description, it seems to represent the largest affordable loss amount, however, in the first formula of 2.1, it represents the amount set aside for potential claims event (which I thought is the reserve)
+
+So I want to use notation $Res$ to represent the Reserve to distinguish them.
+
+I am trying to explain my concept in the following plot.
+
+```{R, echo=FALSE, fig.height=3, fig.width=5}
+par(mar = c(1, 1, 1, 1))
+plot(x = rep(x = 1, times = 10), y = 1:10, type = 'n', xlim = c(0, 2),
+  bty = 'n', axes = FALSE, ylim = c(0, 1.2), ylab = '', xlab = '')
+
+rect(xleft = 0.01, ybottom = 0.01, xright = 2, ytop = 0.2)
+rect(xleft = 0.01, ybottom = 0.3, xright = 0.7, ytop = 0.5)
+rect(xleft = 0.7, ybottom = 0.3, xright = 1.6, ytop = 0.5)
+rect(xleft = 1.6, ybottom = 0.3, xright = 2, ytop = 0.5)
+rect(xleft = 0.01, ybottom = 0.6, xright = 0.4, ytop = 0.8)
+rect(xleft = 0.3, ybottom = 0.9, xright = 2, ytop = 1.1)
+
+
+
+text(x = 1.1, y = 0.1, label = 'C', cex = 1)
+text(x = 0.3, y = 0.4, label = 'Fixed Assets', cex = 1)
+text(x = 1.1, y = 0.4, label = 'Cw', cex = 1)
+text(x = 1.8, y = 0.4, label = 'Res', cex = 1)
+text(x = 0.15, y = 0.7, label = 'Cm', cex = 1)
+text(x = 1.1, y = 1, label = 'S', cex = 1)
+
+```
+
+Back to the question, 
+Insurance can protect losses, revenue is treated as fixed and known quantity, so the companies with insurance would not suffer from any unpredictable loss except the coverage has a upper limit.Therefore, the capital would not decrease to a low level under our assumption.
+
+Insurance can help company release more $C_w$, but can not change other capital requirement.
+
+
+
+
+### 2. Consider the various loss cases:
+First, in the notation, we use R to represent the Revenue for the product or service sold by the insured.
+I suggest using R to represent a return rate otherwise a quantity, since under the no insurance & with insurance cases, $C_w$ would be different, holding more working capital to operate would be a motivation to choose that strategy, using a return rate can better quantify.
+
+Then, I think the Capital Loss for companies will not be exactly the amount of loss, but also depend on the reserve and $C_w$ amount.
+
+I use notation $X_c$ to represent the Capital Loss
+
+I use notation $F_1$ to represent a penalty factor(>=1). This factor comes from the indirect loss when loss is over the reserve
+
+I use notation $F_2$ to represent a penalty factor(>=1). This factor comes from the illiquidity when loss reach the fixed assets
+
+The detail is in the following formula an I think it answers the question how does the cost of capital increase as you get closer to minimum capital
+\
+
+$$
+X_c=\left\{
+             \begin{array}{lr}
+             0 & X=0\\
+             X & 0< X\leq Res\\
+             Res+F_1\ (X-Res) , & Res< X\leq Res+C_w\\
+             Res+F_1\ (X-Res)+F_2\ (X-Res-S) , & Res< X\leq S\\
+             Bankrupt &X>S  
+             \end{array}
+\right.
+$$
+\
+
+After refining some concepts, $C_w=C-Res-Fixed\ Assets$
+
+We can use ROC(Return of capital) as a measurement for the return performance
+
+1 No loss
+
+$\Delta C=R-Z$, $ROC=\frac{R-Z}{C}$
+
+2 A loss that allows the firm to continue operations,what happens if you drop below the minimum capital in terms of the cost to recapitalize
+
+$\Delta C=R-Z-X_c$, $ROC=\frac{R-Z-X_c}{C}$
+
+If the loss is at a high amount and over the $C_m$, company may choose to recapitalize.
+In definition, Recapitalization is adding debt/equity to adjust their proportion to capital.Company can issue stock to buy back debt securities to decrease the debt proportion, or issue debt and use the cash to buy back shares to increase the debt proportion.
+
+If the excess loss happens, company's debt would increase rapidly. Company can issue stock to buy back debt. However, recapitalization is often used to get optimal debt capacity, I'm not sure whether it applies here.
+
+Bankrupt reorganization may be a alternative method. A business in the midst of filing Chapter 11 of bankrupt may continue to operate. In most cases the business can run the business as usual. Bankrupt reorganization is one of the most expensive and complex form of bankruptcy
+
+3 bankruptcy
+
+bankruptcy itself would be a result, which could be discussed in detail if needed.
+
+
+
+### 3. How does that volatility of the three situations above affect the return on capital demanded by investors?
+
+To measure the volatility, we can use $var(\Delta C)$ or use the delta ($\frac{d\Delta C}{dX}$).
+Obviously, under the insurance case, if the only variable is X and coverage has no upper limit, both these 2 measurements would be 0.
+
+To connect the volatility and required return of capital, we can apply the efficient frontier. The efficient frontier is the set of optimal portfolios that offer the highest expected return for a defined level of risk or the lowest risk for a given level of expected return. 
+
 
 

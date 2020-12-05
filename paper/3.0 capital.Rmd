@@ -113,19 +113,19 @@ $\Delta C=R-Z-X_c$, $ROC=\frac{R-Z-X_c}{C}$
 If the excess loss happens, company's debt would increase rapidly. 
 There are the following 3 methods can help company overcome the high debt.
 
-1) Debt Restructuring
+1) Debt Restructuring\
 The debt restructuring process typically involves reducing the interest rates on loans, extending the dates when the company’s liabilities are due to be paid, or both. These steps improve the firm’s chances of paying back the obligations. Creditors understand that they would receive even less should the company be forced into bankruptcy or liquidation.
 Debt restructuring can be a win-win for both entities because the business avoids bankruptcy, and the lenders typically receive more than what they would through a bankruptcy proceeding.
 
-2) Reorganization
-Federal bankruptcy laws govern how companies go out of business or recover from crippling debt.
-Ch11/13 Reorganization
-Ch7 Liquidate
+2) Reorganization\
+Federal bankruptcy laws govern how companies go out of business or recover from crippling debt.\
+Ch11/13 Reorganization\
+Ch7 Liquidate\
 The reorganization is not the real bankrupt. It allows companies to pay off their creditors and emerge from bankruptcy in a stronger position. It is more like a buffer before the liquidates to keep the company continue its day-to-day operation and try to become profitable again. 
 
-3) If the company’s debt situation is not so severe. There are several ways for companies to raise money.
-1.If the company is a public company, it can issue stocks or bonds. 
-2.If the company is a nonpublic company, borrowing money from banks would be a more common way.
+3) If the company’s debt situation is not so severe. There are several ways for companies to raise money.\
+1.If the company is a public company, it can issue stocks or bonds.\
+2.If the company is a nonpublic company, borrowing money from banks would be a more common way.\
 One thing to note, after a high layer loss, the company’s operation could be affected and have a more chance to bankrupt, its stock price would decrease, its bond rating may decrease (which means it needs to pay higher interest for the bonds issued), the bank may reject or charge a higher interest rate when lending money to you.
 
 

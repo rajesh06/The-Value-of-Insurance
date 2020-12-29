@@ -1,0 +1,425 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={The Value of High-Excess Commercial Insurance (working title)},
+  pdfauthor={Zhenkai Zhu; Rajesh Sahasrabuddhe},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{The Value of High-Excess Commercial Insurance (working title)}
+\author{Zhenkai Zhu \and Rajesh Sahasrabuddhe}
+\date{December 28, 2020}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+High excess layer property-casualty insurance serves as a source of
+contingent capital for the insured. That is, instead of setting aside
+capital to fund rare but extreme events, firms will purchase insurance.
+High layer excess insurance, in particular, serves this purpose. Firms
+rarely access these layers, and the expected value of claims in those
+layers is minimal. As such, the insurance policy's primary value is that
+it allows the firm to deploy the capital that it would otherwise need to
+set aside to weather an extreme loss event. This paper describes an
+approach to measure this value.
+\end{abstract}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Commercial insurance programs are often depicted as ``towers.'' (See
+Figure \ref{fig:tower}) The lowest floors of the tower are typically
+comprised of risk retained by the insured. The middle floors include
+commercially insured working layers. High-layer excess insurance occupy
+the penthouse.
+
+Each of these layers has a cost to it.
+
+\begin{itemize}
+\tightlist
+\item
+  The cost of the lowest layers will have a reasonable degree of
+  predictability. The cost for these layers will be principally be the
+  expected loss with a minimal capital charge for volatility. There may
+  also be frictional costs associated with risk retention such as
+  increased audit and actuarial fees and claims costs from legal counsel
+  and third party claim administrators.
+\item
+  The middle layers provide coverage for claims related to events that
+  occur with a degree of regularity. The amount of claims may not be
+  reasonably predictable in a single year but it would be predictable
+  over a longer-term time horizon. They insurance coverage provides
+  value to the insured by smoothing claim volatility over time. There
+  may be multiple insurers in the higher working layers.
+\item
+  Insureds generally do not expect access coverage from the highest
+  layers. The expected claims will likely be close to \$0. For the
+  insured-insurer relationship, this layer provides some smoothing of
+  claims volatility over time. However, insurance in this layer smooth
+  claim volatility across risks. As a result, there are often multiple
+  insurers in these layers, each with a pro-rata share.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{0.0-control_files/figure-latex/insurance tower-1.pdf}
+\caption{\label{fig:tower}Example Insurance Tower}
+\end{figure}
+
+\hypertarget{measuring-value}{%
+\section{Measuring Value}\label{measuring-value}}
+
+Despite insureds not expected to access higher layers and with expected
+claim amounts being minimal, premiums in these layers can be
+significant. In this paper we explore the \emph{value} of the coverage
+in this layer. Measuring this value provides the insured a basis upon
+which to assess the premium established by the insurer.
+
+To assess the value, we should understand that the primary benefit of
+this layer is not in the expected loss but the protection of capital
+that this layer of insurance provides to the insured. Indeed, in this
+layer insureds often consider the insurance as part of its capital
+structure rather than as an operational cost.
+
+\newpage
+
+Below, we present notation that we will use in this paper.
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+\endhead
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(C\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+Total \textbf{capital} for the insured\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(C_w\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+\textbf{Working capital} The capital that the available for the insured
+to conduct operations\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(C_m\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+\textbf{Minimum capital} The minimum capital required for the insured to
+operate.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(A\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+The \textbf{attachment} point of the high excess layer insurance
+policy\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(W\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+The \textbf{width} of the high excess layer insurance policy\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(W\) xs \(A\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+Common terminology to refer to the amount of coverage provided by the
+excess policy\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(P\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+\textbf{Premium} The amount charged by an insurer to accept risk\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(N\), \(n\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+Random variable for the \textbf{number of claims} in excess of \(A\) and
+realizations of that random variable.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(X\), \(x\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+Random variable for claim values in excess of \(A\) (i.e., \$X\$
+conditioned on \(X > A\)), and realizations of that random
+variable.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(S\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+In its enterprise risk management framework, the claim amount in the
+\(W\) x \(A\) layer for which the insured will satisfy its obligations
+and continue to function. That is, for \(X\) \textgreater{} \(S\), the
+insured might need to declare bankruptcy rather than continue to
+function.
+
+Readers should understand that S may be greater than \(C - C_m\) as the
+firm may be able to recapitalize to \(C_m\) after experiencing a claim
+of size S which results in capital temporarily dropping below
+\(C_m\).\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(R\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+\textbf{Revenue} for the product or service sold by the insured\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(Z\)\footnote{We use \(Z\) for expenses so as to not create confusion
+  with the expectations operator, \(E\)}\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+All expenses associated with the production of the product of service
+sold by the insured other than insurance premiums.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.05}}\centering
+\(R_x\)\strut
+\end{minipage} &
+\begin{minipage}[t]{(\columnwidth - 1\tabcolsep) * \real{0.95}}\raggedright
+Within the insured's pricing model for its product or services, the
+portion of revenue that represents recovery of the cost of loss events
+from its customer.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{simplifying-assumptions}{%
+\subsection{Simplifying Assumptions}\label{simplifying-assumptions}}
+
+In this paper, we present the measurement of the value of insurance all
+else being equal.We use the following simplifying assumptions to focus
+on value:
+
+\begin{itemize}
+\item
+  We recognize that, in practice, revenue (\(R\)) and expenses (\(Z\))
+  are subject to variation. However, in this paper, we will treat these
+  as fixed and known quantities.
+\item
+  We also assume market prices for the firm's products, and revenue as a
+  result, are not affected by whether the firm elects to purchase
+  insurance.
+\item
+  We assume that all firms that sell the same product have the sames
+  cost structure.
+\item
+  We assume that investors demand a return on capital commensurate with
+  risk. That is, investors will require a lower return on capital from
+  the insurance buyer.
+\end{itemize}
+
+\hypertarget{a-pedagogical-example}{%
+\subsection{A Pedagogical Example}\label{a-pedagogical-example}}
+
+To support the reader's understanding of the concepts presented in this
+paper, we offer the following pedagogical example. We offer the
+hypothetical airline ``PC Air.''
+
+\begin{itemize}
+\item
+  PC Air leases a single plane.
+\item
+  PC Air's offers cargo transport between New York and Los Angeles. That
+  route requires PC Air's plane to fly over several major ground
+  structures (such as warehouses). PC Air only flies overnight when
+  these structures are not occupied.
+\item
+  PC Air developed a technology that allows it to fly its plan remotely
+  (no pilot).
+\item
+  Airplane crashes are exceeding rare.
+\item
+  PC Air's enterprise risk management targets solvency if its plan were
+  to crash in a remote area. That is, it would be able to reimburse its
+  cargo customers and pay for the owner of the cost of the plane. Its
+  remaining capital would be sufficient for it to lease a new plane. If
+  PC Air's plane were to cause damage to ground structures, it would
+  declare bankruptcy.
+\end{itemize}
+
+Throughout this paper, we will refer back to the example of PC Air to
+help the reader understand that how these concepts work in practice.
+
+\hypertarget{the-no-insurance-base-case}{%
+\subsection{The No Insurance Base
+Case}\label{the-no-insurance-base-case}}
+
+We start by considering the no insurance base case. For simplicity, we
+assume that only one claim can occur during the policy period.
+
+Under these conditions:
+
+\begin{itemize}
+\item
+  \(C_w = C_0 - S\) The firm's (beginning) working capital is equal to
+  its total capital less the amount that it elects to set aside for
+  potential claims event.
+\item
+  The change in capital (\(\Delta C\)) depends upon whether a loss event
+  occurs.
+
+  \begin{itemize}
+  \item
+    No loss event (\(n\) = 0): \(\Delta C = R - Z\)
+  \item
+    Loss event occurs (\(n\) = 1): \(\Delta C = R - Z - X\). Critically,
+    we recognize that a portion of the distribution of \(\Delta C\) is
+    greater than \(C - C_m\). For these realziations of \$X\$, the firm
+    must declare bankruptcy.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{the-insurance-case}{%
+\subsection{The Insurance Case}\label{the-insurance-case}}
+
+If the firm elects to purchase insurance, then:
+
+\begin{itemize}
+\item
+  \(C_w = C_I - P\) The insured will need to pay premium but it no
+  longer needs to set aside capital to cover potential claim events.
+\item
+  The change in capital is no longer depends on whether a loss occurs:
+  \(\Delta C = R - Z - P\).
+\end{itemize}
+
+\hypertarget{capital-relationships}{%
+\section{Capital Relationships}\label{capital-relationships}}
+
+We now consider the firm's capital. We present the development of the
+capital structure below:
+
+\begin{eqnarray[*]}
+\text{Capital} &= \text{Assets} - \text{Liabilities}
+\text{Assets} &= \text{Fixed Assets} - \text{Current Assets}
+
+\end{eqnarray[*]}
+
+\text{Assets} = Capital + Liabilities (Is this correct? I changed
+``Equity'' to ``Capital'')
+
+Assets = Fixed Assets + Current Assets
+
+Capital = Equity Capital + Debt Capital
+
+Capital = Fixed Assets + Net Working Capital (Current Assets Current
+Liabilities)
+
+\includegraphics{0.0-control_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{can-the-insurer-buyer-maintain-a-lower-level-of-capital}{%
+\subsubsection{Can the insurer buyer maintain a lower level of
+capital?}\label{can-the-insurer-buyer-maintain-a-lower-level-of-capital}}
+
+Under no insurance case, Net Working Capital includes \(C_w\) and
+Reserve set aside for potential claims event.
+
+About S, in the notation description, it seems to represent the largest
+affordable loss amount, however, in the first formula of 2.1, it
+represents the amount set aside for potential claims event (which I
+thought is the reserve)
+
+So I want to use notation \(Res\) to represent the Reserve to
+distinguish them.
+
+I am trying to explain my concept in the following plot.
+
+Back to the question, Insurance can protect losses, revenue is treated
+as fixed and known quantity, so the companies with insurance would not
+suffer from any unpredictable loss except the coverage has a upper
+limit.Therefore, the capital would not decrease to a low level under our
+assumption.
+
+Insurance can help company release more \(C_w\), but can not change
+other capital requirement.
+
+\hypertarget{how-does-that-volatility-of-the-three-situations-above-affect-the-return-on-capital-demanded-by-investors}{%
+\subsubsection{3. How does that volatility of the three situations above
+affect the return on capital demanded by
+investors?}\label{how-does-that-volatility-of-the-three-situations-above-affect-the-return-on-capital-demanded-by-investors}}
+
+To measure the volatility, we can use \(var(\Delta C)\) or use the delta
+(\(\frac{d\Delta C}{dX}\)). Obviously, under the insurance case, if the
+only variable is X and coverage has no upper limit, both these 2
+measurements would be 0.
+
+To connect the volatility and required return of capital, we can apply
+the efficient frontier. The efficient frontier is the set of optimal
+portfolios that offer the highest expected return for a defined level of
+risk or the lowest risk for a given level of expected return.
+
+\end{document}

@@ -4,10 +4,12 @@ Despite insureds not expected to access higher layers and with expected claim am
 
 To assess the value, we should understand that the primary benefit of this layer is not in the expected loss but the protection of capital that this layer of insurance provides to the insured. Indeed, in this layer insureds often consider the insurance as part of its capital structure rather than as an operational cost.
 
+\newpage
+
 Below, we present notation that we will use in this paper.
 
 +:----------:+:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| $C$        | Total **capital** for the Insured                                                                                                                                                                                                                                         |
+| $C$        | Total **capital** for the insured                                                                                                                                                                                                                                         |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | $C_w$      | **Working capital** The capital that the available for the insured to conduct operations                                                                                                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -27,7 +29,7 @@ Below, we present notation that we will use in this paper.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | $S$        | In its enterprise risk management framework, the claim amount in the $W$ x $A$ layer for which the insured will satisfy its obligations and continue to function. That is, for $X$ \> $S$, the insured might need to declare bankruptcy rather than continue to function. |
 |            |                                                                                                                                                                                                                                                                           |
-|            | Readers should understand that S may be greater than $C - C_m$ as the firm may be able to recapitalize to $C_m$ after expericing a claim of size S which results in capital temporarilly dropping below $C_m$.                                                         |
+|            | Readers should understand that S may be greater than $C - C_m$ as the firm may be able to recapitalize to $C_m$ after experiencing a claim of size S which results in capital temporarily dropping below $C_m$.                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | $R$        | **Revenue** for the product or service sold by the insured                                                                                                                                                                                                                |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -38,52 +40,3 @@ Below, we present notation that we will use in this paper.
 
 [^1]: We use $Z$ for expenses so as to not create confusion with the expectations operator, $E$
 
-## The No Insurance Base Case
-
-We start by considering the no insurance base case. For simplicity, we assume that only one claim can occur during the policy period.
-
-Under these conditions:
-
--   $C_w = C_0 - S$ The firm's (beginning) working capital is equal to its total capital less the amount that it elects to set aside for potential claims event.
-
--   The change in capital ($\Delta C$) depends upon whether a loss event occurs.
-
-    -   No loss event ($n$ = 0): $\Delta C = R - Z$
-
-    -   Loss event occurs ($n$ = 1): $\Delta C = R - Z - X$. Critically, we recognize that a portion of the distribution of $\Delta C$ is greater than $C - C_m$. For these realziations of \$X\$, the firm must declare bankruptcy.
-
-## The Insurance Case
-
-If the firm elects to purchase insurance, then:
-
--   $C_w = C_I - P$ The insured will need to pay premium but it no longer needs to set aside capital to cover potential claim events.
-
--   The change in capital is no longer depends on whether a loss occurs: $\Delta C = R - Z - P$.
-
-## Simplifying Assumptions
-
-In this paper, we present the measurement of the value of insurance *all else being equal*.
-
--   We recognize that, in practice, revenue ($R$) and expenses ($Z$) are subject to variation. However, in this paper, we will treat these as fixed and known quantities.
-
--   We also assume market prices, and revenue as a result, are not affected by whether the firm elects to purchase insurance.
-
--   We assume that all firms that sell the same product have the sames cost structure.
-
--   We assume that investors demand a return on capital commensurate with risk. That is, investors will require a lower return on capital from the insurance buyer.
-
-## A Pedagogical Example
-
-To support the reader's understanding of the concepts presented in this paper, we offer the following pedagogical example. We offer the hypothetical airline "PC Air."
-
--   PC Air leases a single plane.
-
--   PC Air's offers cargo transport between New York and Los Angeles. That route requires PC Air's plan to fly over several major ground structures (such as warehouses). PC Air only flies overnight when these structures are no occupied.
-
--   PC Air developed a technology that allows it to fly its plan remotely.
-
--   Airplane crashes are exceeding rare.
-
--   PC Air's enterprise risk management strategy and support continuation of operation if its plan were to crash in a remote area. That is, it would be able to reimburse its cargo customers and pay for the owner of the cost of the plane. It's remaining capital would be sufficient for it to lease a new plane. If PC Air's plane were to cause damage to ground structures, it would declare bankruptcy.
-
-Throughout this paper, we will refer back to the example of PC Air to help the reader understand that how these concepts work in practice.

@@ -1,0 +1,11 @@
+## Simplifying Assumptions
+
+In this paper, we present the measurement of the value of insurance all else being equal.We use the following simplifying assumptions to focus on value:
+
+-   We recognize that, in practice, revenue ($R$) and expenses ($Z$) are subject to variation. However, in this paper, we will treat these as fixed and known quantities.
+
+-   We also assume market prices for the firm's products, and revenue as a result, are not affected by whether the firm elects to purchase insurance.
+
+-   We assume that all firms that sell the same product have the sames cost structure.
+
+-   We assume that investors demand a return on capital commensurate with risk. That is, investors will require a lower return on capital from the insurance buyer.

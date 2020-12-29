@@ -1,13 +1,15 @@
 # Introduction
 
-Commercial insurance programs are often depicted as "towers." (See Figure \ref{fig:tower}) The lowest floors of the tower are typically comprised of risk retained by the insured. The middle floors include commercially insured working layers. The "penthouse" is generally high-layer excess insurance. Each of these layers has a cost to it.
+Commercial insurance programs are often depicted as "towers." (See Figure \ref{fig:tower}) The lowest floors of the tower are typically comprised of risk retained by the insured. The middle floors include commercially insured working layers.  High-layer excess insurance occupy the penthouse. 
 
--   The cost of the lowest layers will have a reasonable degree of predictability. The cost for these layers will be principally be the expected loss with a minimal capital charge volatility. There may also be frictional costs associated with risk retention such as increased audit and actuarial fees and claims costs from legal counsel and third party claim administrators.
+Each of these layers has a cost to it.
+
+-   The cost of the lowest layers will have a reasonable degree of predictability. The cost for these layers will be principally be the expected loss with a minimal capital charge for volatility. There may also be frictional costs associated with risk retention such as increased audit and actuarial fees and claims costs from legal counsel and third party claim administrators.
 -   The middle layers provide coverage for claims related to events that occur with a degree of regularity. The amount of claims may not be reasonably predictable in a single year but it would be predictable over a longer-term time horizon. They insurance coverage provides value to the insured by smoothing claim volatility over time. There may be multiple insurers in the higher working layers.
--   Insureds generally do not expect access coverage from the highest layers. The expected claims will likely be close to \$0. The coverage does not smooth claims volatility for the insured over time but rather smooths claim volatility across insured risks. There are often multiple insurers in these layers, each with a pro-rata share. 
+-   Insureds generally do not expect access coverage from the highest layers. The expected claims will likely be close to \$0. For the insured-insurer relationship, this layer provides some smoothing of claims volatility over time. However, insurance in this layer smooth claim volatility across risks. As a result, there are often multiple insurers in these layers, each with a pro-rata share. 
 
-```{r insurance tower, echo=FALSE, fig.height=5, fig.width=5, fig.cap= "\\label{fig:tower}Example Insurance Tower"}
-par(mar = c(1, 1, 1, 1))
+```{r insurance tower, echo=FALSE, fig.height=4, fig.width=3, fig.cap= "\\label{fig:tower}Example Insurance Tower"}
+par(mar = c(1, 0, 0, 0))
 plot(x = rep(x = 1, times = 10), y = 1:10, type = 'n', xlim = c(0.8, 1.2),
   bty = 'n', axes = FALSE, ylim = c(0, 14), ylab = '', xlab = '')
 rect(xleft = 0.9, ybottom = 0.01, xright = 1.1, ytop = 2)

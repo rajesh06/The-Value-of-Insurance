@@ -5,3 +5,6 @@
 .Rproj.user
 .Rhistory
 *.html
+*.pdf
+r/rmd/loi.pdf
+*.pdf

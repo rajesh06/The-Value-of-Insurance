@@ -52,9 +52,11 @@ In our review, we assume the following:
     mtext(text = 'Density', side = 2, line = 0.5, cex = 0.7)
     ```
 
--   The firm has an enterprise risk management (ERM) strategy underlying its
-    capital allocation. Its ERM strategy dictates that it can absorb a claim at
-    the $p^{th}$ percentile of the distribution of $X$ which we denote as $X_p$.
+-   The firm has an enterprise risk management (ERM)
+    strategy underlying its capital allocation. Its ERM strategy dictates that
+    it can
+    absorb a claim at the $p^{th}$ percentile of the distribution of $X$ which
+    we denote as $X_p$.
 
 -   The firm is able to generates a return on capital of $r_c$.
 
@@ -71,13 +73,10 @@ deploy capital, we compare rates of return both with and without insurance.
 ### Rate of Return without Insurance
 
 The firm's ERM strategy will require that it set aside a reserve in case it was
-to experience significant capital depletion. We denote this reserve as $C_x$, to
-indicate that the reserve is a segregation of capital to absorb realizations of
-$X$ that reduce $C$ below $C_m$. Effectively, the firm is insuring self-insuring
-this risk but, unlike an insurer, it can not spread that risk across its insured
-portfolio.
-
-We present that capital allocation approach in Figure X.
+to experience a capital depletion event that reduces. We denote this reserve as
+$C_x$, to indicate that the reserve is a seggregation of capital to absorb
+realizations of $X$ that reduce $C$ below $C_m$. We present that capital
+allocation approach in Figure X.
 
 ```{r No Insurnace, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 par(mar = c(1, 1, 1, 1))
@@ -251,7 +250,7 @@ the premium amount were also deployed as capital.
 
 ## Risk Premium Rate
 ### Approach 1: Penalty function on Rate of Return ($R_0$ and $R_1$),
-### I write 2 possible ways to apply the penalty function, we can pick a better one
+### I write 2 possible Approaches to apply the penalty function, we can pick a better one
 
 ### Without insurance
 I only assume X and $r_c$ are random variables\
@@ -267,7 +266,7 @@ X_{original}& {X_{original}<= CX_0}\\
 X_{original}+(1+F_{penalty}) \times (X_{original}-CX_0) & {X_{original}>CX_0}\\
 \end{cases}
 $$
-Then, we can calculate $E(r_c)$, $var(r_c)$, then the $E(r_0)$, $var(r_0)$
+Then, we can calculate  $E(r_0)$, $var(r_0)$
 
 
 

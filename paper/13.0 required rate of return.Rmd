@@ -1,13 +1,22 @@
----
-output:
-  pdf_document: default
-  html_document: default
-editor_options: 
-  markdown: 
-    wrap: 80
----
+# Risk Premium Rate
+The second source of value created by insurance results from the reduction in the volatility of returns for insurance buyers. Investors will demand a lower return from firms with reduced earning volatility. 
 
-## Risk Premium Rate
+As we did in measuring the value through capital deployment, we first calculate the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer. In this analysis, we focus on the change in Sharpe Ratio.
+
+$$
+\text{Sharpe Ratio} = \frac{E(R)-r_f}{\sigma_{R}}
+$$
+
+The Sharpe Ratio relates the risk premium required (numerator) to return volatility. More specifically, the Sharpe Ratio indicates the risk premium associated required for every unit of volatility would bring how much of the risk premium rate of
+return. 
+
+
+we can calculate the optimal reserve amount($CX_0$) using Sharpe Ratio
+as criterion at this step.\
+The higher the Sharpe Ratio, the better the investment is.
+
+
+
 
 ### Approach 1: Penalty function on Rate of Return ($R_0$ and $R_1$),
 

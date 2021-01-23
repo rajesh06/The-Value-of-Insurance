@@ -1,0 +1,224 @@
+# Capital Deployment
+In this section, we describe how high-excess insurance allows the insured to deploy capital that it would otherwise need to set aside to weather an extreme loss event. In our review, we assume the following:
+
+-   There is a fixed amount of capital, $C$, available to the firm.
+
+-   The firm requires minimum capital, $C_m$, to continue as a going concern.
+
+-   We denote deployed capital, i.e., the working capital, as $C_w$.
+
+-   The firm is subject to the loss events that result in aggregate claim
+    amounts, $X$. We present distribution of claim amounts in Figure X[^1].
+
+    -   For simplicity, we assume information symmetry as respects $X$. That is,
+        the insurer and the insured use the same distribution for $X$.
+
+    -   We denote the maximum probable claim amount as $X_m$.
+
+    -   The scale of $X$ is a function of $C_w$.
+
+    ```{r Claim Distribution, echo=FALSE, fig.height=3, fig.width=5, message=FALSE, paged.print=FALSE, fig.cap="Claim (X) Distribution"}
+    par(mar = c(2, 2, 1, 1))
+    rate <- 6
+    dens <- 100
+    d_x <- seq(from = 0, to = rate, length.out = dens)
+    d_y <- dexp(1:dens / dens, rate = rate) / rate
+
+    plot(x = d_x, y = d_y,  type = 'l', col = 'blue', lty = 'dotted', axes = FALSE,
+      xlab = '', ylab = '')
+    box()
+    mtext(text = expression(italic(X)), side = 1, line = 0.5, cex = 0.7)
+    mtext(text = 'Density', side = 2, line = 0.5, cex = 0.7)
+    ```
+
+-   The firm has an enterprise risk management (ERM) strategy underlying its
+    capital allocation. Its ERM strategy dictates that it can absorb a claim at
+    the $p^{th}$ percentile of the distribution of $X$ which we denote as $X_p$.
+
+-   The firm is able to generates a return on capital of $r_c$.
+
+-   We denote the risk free rate $r_f$.
+
+[^1]: This is an illustrative claim distribution that we present to support
+    further development of value measurement.
+
+## Capital Deployment
+
+In order to measure of the value of insurance related to the firm's ability to
+deploy capital, we compare rates of return both with and without insurance.
+
+### Rate of Return without Insurance
+
+The firm's ERM strategy will require that it set aside a reserve in case it was
+to experience a capital depletion event that reduces. We denote this reserve as
+$C_x$, to indicate that the reserve is a seggregation of capital to absorb
+realizations of $X$ that reduce $C$ below $C_m$. We present that capital
+allocation approach in Figure X.
+
+```{r No Insurnace, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+par(mar = c(1, 1, 1, 1))
+
+scale <- 10
+
+center <- 1
+plot(x = 1, y = 1, type = 'n', xlim = c(0.9, 1.9),
+  bty = 'n', axes = FALSE, ylim = c(0, 1.2 * scale), ylab = '', xlab = '')
+rect(xleft = center - 0.1, ybottom = 0, xright = center + 0.1, ytop = scale)
+#text(x = center, y = 3, label = 'Working Capital', cex = 0.7)
+text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
+
+# Minimum working capital -----
+c_m <- 0.6 * scale
+text(x = center, y = c_m, label = 'Minimum Working Capital', col = 'red' , 
+  pos = 3, cex = 0.7, adj = 0)
+abline(h = c_m, col = 'red', lty = 'dashed')
+
+
+# Plot loss RV rotate ----
+center <- 1.25
+
+dens <- 100
+dens_width <- 0.2
+dens_left <- center - dens_width / 2
+
+rate <- 9.430859 #Start at rate <- scale and iterate (see base_case.R)
+d_x <- seq(from = rate, to = 0, length.out = dens)
+rate <- scale - (c_m - d_x[43])
+
+d_x <- seq(from = rate, to = 0, length.out = dens)
+d_y <- dexp(1:dens / dens, rate = rate) / rate * dens_width + dens_left
+
+points(y = d_x, x = d_y,  type = 'l', col = 'blue', lty = 'dotted')
+
+text(x = center, y = d_x[43], label = 'ERM Threshold', col = 'blue' , 
+  pos = 1, cex = 0.7, lty = 'dashed')
+
+text(x = dens_left, y = .90 * rate, pos = 2, label = expression(italic(X)), srt = 270, col = 'blue', cex = 0.7, adj = c(0, 0))
+
+text(x = dens_left, y = d_x[43], pos = 1, label = expression(X[`p`]), srt = 270, col = 'blue', cex = 0.7, adj = c(0, 0))
+
+
+abline(h = d_x[43], col = 'blue', lty = 'dotted')
+
+rect(xleft = dens_left, xright = dens_left + dens_width, ybottom = 0, 
+  ytop = rate, border = 'blue', lty = 'dotted')
+
+text(x = dens_left + dens_width / 2, y = rate, 
+  label = 'Claim (X) Distribution', cex = 0.7, col = 'blue', pos = 3)
+
+
+# reserve -----
+center <- 1.50
+res_left <- 1.50 - .1
+rect(ybottom = d_x[43], ytop = c_m, xleft = res_left, xright = res_left + 
+    dens_width, col = 'grey90', lty = 'dotted')
+
+text(x = mean(c(res_left, res_left + dens_width)), y = mean(c(d_x[43], c_m)), 
+  label = 'Reserves\n(Segregated Capital)', cex = 0.7)
+
+arrow_bend_y <- mean(c(scale, scale - (c_m - d_x[43])))
+
+lines(x = rep(
+  mean(c(res_left, res_left + dens_width)), 
+  times = 2), 
+  y = c(c_m, arrow_bend_y), lty = 'dotted')
+
+arrows(x0 = center, y0 = arrow_bend_y, 
+  x1 = center + 0.15, lty = 'dotted')
+
+# Allocated Capital ----
+
+center <- 1.75
+
+rect(xleft = center - 0.1, ybottom = 0, xright = center + 0.1, 
+  ytop = scale - (c_m - d_x[43]), border = 'red')
+
+rect(xleft = center - 0.1, ybottom = scale - (c_m - d_x[43]), 
+  xright = center + 0.1, ytop = scale , col = 'grey90', lty = 'dotted')
+
+text(x = center, y = mean(
+  c(scale, 
+    scale - (c_m - d_x[43])
+  )), 
+  label = expression(italic(CX)[`0`]), cex = 0.7)
+
+text(x = center, y = 5, label = expression(italic(CW)[`0`]), cex = 0.7, col = 'red')
+
+text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
+
+#'Working Capital'
+```
+
+Using the naught subscript to represent this base case, the rate of return is
+then as follows:
+
+$$
+R_{0} = \dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C}
+$$
+
+The numerator is the sum of the return on working capital, the return on the
+reserve less the value of the claim amount. The inclusion of the random variable
+$X$ indicates that the return is a function of the realized value of the loss
+event.
+
+### Rate of Return with Insurance
+
+If instead, the firm purchases insurance to cover a portion of loss event for a
+certain premium, using the subscript, $I$, to represent the "insurance case,"
+then the rate of return is as follows:
+
+$$
+R_{I} = \dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C}
+$$
+
+where $X_{ret}$ represents portion of the distribution of claims values that the
+firm retains. We express $X_{ret}$ using the convention used to specify
+insurance policies. That convention specifies the layer as the limit of the
+insurance payment, $L$, in excess of the attachment point, $AP$ of the coverage.
+We allow $X_{ret}$ (i.e. to $L$) vary between 0 (equal to the no insurance case)
+and $X_m$ (in which case, the firm fully transfers the risk). We observe that
+for $0 < X_{ret} < (X_p - C_m)$, $C_x = 0$.
+
+$P$ is the sum of the expected loss $E[X - X_{ret}]$ and an insurance charge.
+The insurance charge contemplates the insurer for underwriting the exposure and
+provides for a return on its capital. Therefore we expect the insurance charge
+to be a function of $Var(X - X_{ret})$. However, the firm only observes premiums
+quoted under various options. As such, it is not concerned with the function the
+insurer uses to develop its risk charge.
+
+### Value Creation
+
+We observe that the purchase insurance creates value when: $$
+\begin{aligned}
+R_I &> R_0 \\
+r_c \times (C-P-CX_{I}) + r_f \times CX_{I} - X_{ret} - P &> r_c \times CW_{0} + r_f \times CX_{0} - X \\
+P + X_{ret} &< r_c \times (C - P - CX_I - CW_{0}) + r_f \times (CX_{I} - CX_{0}) + X \\
+P  &< r_c \times (C - P - CX_I - CW_{0}) + r_f \times (CX_{I} - CX_{0}) + X - X_{ret}
+\end{aligned}
+$$
+
+To simplify this equation:
+
+-   For the rational firm (where $r_c > r_f$[^2]) purchases insurance such that
+    it need not set aside any capital. Therefore, $CX_I = 0$ and $CW_I = C - P$.
+
+-   We note that the expected value of $X$ in high excess layers is nearly 0.
+    That is, $E[X] \approx 0$ and $E[X_{ret}] \approx 0$. Moreover,
+    $E[X - X_{ret}] \approx 0$. As a result, taking expectations, our value
+    equation reduces to:
+
+[^2]: Without this condition there is no economic value to the firm's existence.
+
+$$
+\begin{aligned}
+P &< r_c \times (C - P - CW_0) + r_f \times (-CX_0)\\
+P &< r_c \times (-P) + r_c \times CX_0 + r_f \times (-CX_0)\\
+P \times (1 + r_c) &< CX_0 \times (r_c - r_f)\\
+P &< CX_0 \times \dfrac{(r_c - r_f)}{(1 + r_c)}
+\end{aligned}
+$$
+
+The equation has a straightforward intuitive interpretation that the insurance
+transaction creates value when the premium is less than the excess return on
+capital that would be earned on the reserve reduced for the return on capital if
+the premium amount were also deployed as capital.

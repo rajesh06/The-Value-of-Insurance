@@ -1,0 +1,24 @@
+# Literature Review
+We identified and reviewed the following papers in our literature review. As noted, these papers focused on the return on the insuer's capital rather than the value of capital preservation for the insured.
+
+[Macalaster, Spencer. Insurance as a Form of Capital. January 12, 2015.](https://www.insurancejournal.com/magazines/mag-closingquote/2015/01/12/353262.htm) Described the issue conceptually but without measurement and does not mention the role of the actuary in establishing reserves.
+
+[Arrow, K.J. Essays in the Theory of Risk Bearing; Markham: Chicago, IL, USA, 1971.](https://content.ebscohost.com/ContentServer.asp?T=P&P=AN&K=5054063&S=R&D=bth&EbscoContent=dGJyMNXb4kSeqa440dvuOLCmsEieqK5Ss664TbOWxWXS&ContentCustomer=dGJyMPGut1C0rLNRuePfgeyx83vt5OyF39%2Fs) Arrow's theorem is the cornerstone of the application of expected-ulitily theory in insurance
+
+[Raviv, A. The design of optimal insurance policy. Am. Econ. Rev. 1979, 69, 84--96.](https://www.jstor.org/stable/1802499) Used expected utility theory to measure value for an insured.
+
+[Gollier, C. Optimum insurance of approximate losses. J. Risk Insur. 1996, 63, 369--380.](https://www.jstor.org/stable/253617) Also used expected utility theory to measure optimize the insured retentions.
+
+[Yaari, M. The dual theory of choice under risk. Econometrica 1987, 55, 95--115.](https://www.jstor.org/stable/1911158) The modification of expected utility theory
+
+[Kai A. Konrad; Stegrios Skaperds. Self-Insurance and Self-Protection: A Nonexpected Utility Analysis. The Geneva Papers on Risk and Insurance Theory, 1993-12, Vol.18 (2), p.131-146.](https://www.jstor.org/stable/41953283) Used rank-dependent expected utility preferences to measure value for an insured
+
+[Christophe Courbage. Self-Insurance, Self-Protection and Market Insurance within the Dual Theory of Choice. The Geneva papers on risk and insurance theory, 2001-06-01, Vol.26 (1), p.43-56.](https://www.researchgate.net/publication/5221351_Self-Insurance_Self-Protection_and_Market_Insurance_within_the_Dual_Theory_of_Choice_In_The_Geneva_Papers_on_Risk_and_Insurance_Theory_26_1_43-56) Used dual theory to measure value for an insured
+
+[Michael Merz; Mario V. Wüthrich, Demand of Insurance under the Cost-of-Capital Premium Calculation Principle. Risks, 2014, Vol.2(2), 226-248.](https://www.mdpi.com/2227-9091/2/2/226/htm) Used risk premium approach to measure value for an insured
+
+[Bernard, C.; He, X.D.; Yan, J.-A.; Zhou, X.Y. Optimal insurance design under rank-dependent expected utility. In Mathematical Finance; SSRN Preprint: Waterloo, Canada, 2014.](https://www.researchgate.net/publication/228293026_Optimal_Insurance_Design_Under_Rank-Dependent_Expected_Utility) Used rank-dependent expected utility theory to measure value for an insured too
+
+[Laury, S.; M. Mcinnes, and J.Swarthout(2009). Insurance Decisions for Low-Probability Losses. Journal of Risk and Uncertainty, 39, 17--44.](https://www.researchgate.net/publication/225581818_Insurance_Decisions_for_Low_Probability_Losses) Used experimental evidence to show individual's under-insure decision for low-probability high-loss events
+
+[Kunreuther, H.; Pauly, M. (2004). Neglecting disaster: Why don't people insure against large losses? Journal of Risk and Uncertainty, 28, 5--21.](https://www.jstor.org/stable/41761127) Used utility theory to show the reason why individuals don't insure low-probability and high-loss events

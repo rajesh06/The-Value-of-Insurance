@@ -1,0 +1,47 @@
+# Introduction
+
+Commercial insurance programs are often depicted as "towers." (See Figure \ref{fig:tower}) The lowest floors of the tower are typically comprised of risk retained by the insured. The middle floors include commercially insured working layers.  High-layer excess insurance occupy the penthouse. 
+
+Each of these layers has a cost to it. Ignoring insurer expenses:
+
+-   The cost of the lowest layers will have a reasonable degree of predictability. The cost for these layers will be principally be the expected loss with a minimal capital charge for volatility. There may also be frictional costs associated with risk retention such as increased audit and actuarial fees and claims costs from legal counsel and third party claim administrators.
+-   The middle layers provide coverage for claims related to events that occur with a degree of regularity. The amount of claims may not be reasonably predictable in a single year but it would be predictable over a longer-term time horizon. They insurance coverage provides value to the insured by smoothing claim volatility \emph{over time}. There may be multiple insurers in the higher working layers.
+-   Insureds generally do not expect access coverage from the highest layers. The expected claims will likely be close to \$0. For the insured-insurer relationship, this layer provides some smoothing of claims volatility over time. However, insurance in this layer smooth claim volatility \emph{across risks and time}. As a result of the need to smooth volatility across risks, there are often multiple insurers in these layers, each with a pro-rata share. These high excess layers are the focus of this paper.
+
+```{r insurance tower, echo=FALSE, fig.height=4, fig.width=3, fig.cap= "\\label{fig:tower}Example Insurance Tower"}
+par(mar = c(1, 0, 0, 0))
+plot(x = rep(x = 1, times = 10), y = 1:10, type = 'n', xlim = c(0.8, 1.2),
+  bty = 'n', axes = FALSE, ylim = c(0, 14), ylab = '', xlab = '')
+rect(xleft = 0.9, ybottom = 0.01, xright = 1.1, ytop = 2)
+rect(xleft = 0.9, ybottom = 2, xright = 1.1, ytop = 5)
+rect(xleft = 0.9, ybottom = 5, xright = 1.1, ytop = 8)
+rect(xleft = 0.9, ybottom = 8, xright = 1.1, ytop = 13, col = 'grey90')
+text(x = 1, y = 1, label = '$1 million retention', cex = 0.7)
+text(x = 1, y = 3.75, label = 'First Layer Excess\n$9 million\nInsurer A', cex = 0.7)
+text(x = 1, y = 6.75, label = 'Second Layer Excess\n$20 million\nInsurer B (60%)\nInsurer C (40%)', cex = 0.7)
+text(x = 1, y = 11, label = 'Third Layer Excess\n$50 million\nInsurer D (50%)\nInsurer E (30%)\nInsurer F (20%)', cex = 0.7)
+text(x = 0.85, y = 7, srt = 90, label = 'Coverage Layer\n(not to scale)', cex = 0.7)
+```
+
+## The Value of High Excess Layers
+
+Despite insureds not expected to access higher layers and with expected claim amounts being minimal, premiums in these layers can be significant. In this paper we explore the *value* of the coverage in this layer. Measuring this value provides the insured a basis upon which to assess the premium established by the insurer.
+
+To assess the value, we should understand that the primary benefit of this layer is not in the expected loss but the protection of capital that this layer of insurance provides to the insured. Indeed, in this layer insureds often consider the insurance as part of its capital structure rather than as an operational cost. 
+
+## Literature Search
+
+Most of "capital" research in this area focuses on the insurer's return on capital rather than the protection of the insured's capital.
+
+The research related to the insured's preference focuses on utility theory (as a function of wealth) and that research is generally presented in the context of personal insurance coverages (such as homeowners). Capital protection and wealth maximization are related concepts and utility functions (generically) quantify insurance value. However, the research we reviewed differs from our approach which seeks to quantify of one specific aspect of the value of insurance. We provide the papers that we reviewed in Appendix \ref{literature-review}
+
+# Measuring Value
+
+In this paper we now consider the two primary sources of value for the insured:
+
+-   The ability to deploy capital that it would have otherwise had to set aside for an insurable event.
+
+-   Reduced volatility of earnings and the resulting reduction in required
+    return.
+
+We review the first source of value creation in Section \ref{capital-deployment} and the second source in Section X.2.

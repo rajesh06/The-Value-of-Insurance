@@ -25,6 +25,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r child = here::here('paper', '12.0 capital deployment.Rmd')}
 ```
 
+<!-- Section 3: Required Rate of Return -->
+```{r child = here::here('paper', '13.0 required rate of return.Rmd')}
+```
+
+
 
 
 \newpage

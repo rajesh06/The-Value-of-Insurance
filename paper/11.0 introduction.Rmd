@@ -35,7 +35,7 @@ Most of "capital" research in this area focuses on the insurer's return on capit
 
 The research related to the insured's preference focuses on utility theory (as a function of wealth) and that research is generally presented in the context of personal insurance coverages (such as homeowners). Capital protection and wealth maximization are related concepts and utility functions (generically) quantify insurance value. However, the research we reviewed differs from our approach which seeks to quantify of one specific aspect of the value of insurance. We provide the papers that we reviewed in Appendix \ref{literature-review}
 
-# Measuring Value
+## Measuring Value
 
 In this paper we now consider the two primary sources of value for the insured:
 

@@ -1,42 +1,28 @@
-# Risk Premium Rate
-The second source of value created by insurance results from the reduction in the volatility of returns for insurance buyers. Investors will demand a lower return from firms with reduced earning volatility. 
+---
+editor_options: 
+  markdown: 
+    wrap: 80
+---
 
-As we did in measuring the value through capital deployment, we first calculate the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer. In this analysis, we focus on the change in Sharpe Ratio.
+# Risk Premium Rate
+
+The second source of value created by insurance results from the reduction in
+the volatility of returns for insurance buyers. Investors will demand a lower
+return from firms with reduced earning volatility.
+
+As we did in measuring the value through capital deployment, we first calculate
+the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer. In this analysis, we focus on the change in Sharpe Ratio.
 
 $$
 \text{Sharpe Ratio} = \frac{E(R)-r_f}{\sigma_{R}}
 $$
 
-The Sharpe Ratio relates the risk premium required (numerator) to return volatility. More specifically, the Sharpe Ratio indicates the risk premium associated required for every unit of volatility would bring how much of the risk premium rate of
-return. 
+The Sharpe Ratio relates the risk premium required (numerator) to return
+volatility (denominator). More specifically, the Sharpe Ratio indicates the risk premium required for every unit of volatility.
 
+## Sharpe Ratio without insurance
 
-we can calculate the optimal reserve amount($CX_0$) using Sharpe Ratio
-as criterion at this step.\
-The higher the Sharpe Ratio, the better the investment is.
-
-
-
-
-### Approach 1: Penalty function on Rate of Return ($R_0$ and $R_1$),
-
-### I write 2 possible Approaches to apply the penalty function, we can pick a better one
-
-### Without insurance
-
-I only assume X and $r_c$ are random variables\
-
-$r_c$ follows a lognormal distribution or any other reasonable distributions\
-
-About X, I first define a variable $X_{original}$ with
-$E(X_{original}) \approx 0$, and $var(X_{original}) \neq 0$\
-$$
-X =
-\begin{cases}
-X_{original}& {X_{original}<= CX_0}\\
-X_{original}+(1+F_{penalty}) \times (X_{original}-CX_0) & {X_{original}>CX_0}\\
-\end{cases}
-$$ Then, we can calculate $E(r_0)$, $var(r_0)$
+As with the discussion in Section \ref{capital-deployment}, we use the naught subscript to represent the base case. We can calculate $E(R_0)$, $var(R_0)$ as presented below under the assumption that the risk free rate, $r_f$, is fixed and that that $X$ and $r_c$ are independent.
 
 $$
 \begin{aligned}
@@ -51,24 +37,19 @@ var(R_{0}) &= var(\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
 \end{aligned}
 $$
 
-Then, we can use Sharpe Ratio ($\frac{E(\ R)-r_f}{\sigma_{R}}$), which shows
-every unit of volatility would bring how much of the risk premium rate of
-return. we can calculate the optimal reserve amount($CX_0$) using Sharpe Ratio
-as criterion at this step.\
-The higher the Sharpe Ratio, the better the investment is.
-
 $$
 \begin{aligned}
-Sharpe\ Ratio 
-&=\frac{E(\ R_0)-r_f}{\sigma_{R_0}}\\
-&=\frac{(C-CX_{0})\times E(r_c)+r_f \times CX_{0}-r_f *C}{C} / (\frac{(C-CX_{0})^2\times var(r_c)+var(x)}{C^2})^{0.5}\\
+\text{Sharpe Ratio}_0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
+&=\frac{(C-CX_{0})\times E(r_c)+r_f \times CX_{0}-r_f \times C}{C} / (\frac{(C-CX_{0})^2\times var(r_c)+var(x)}{C^2})^{0.5}\\
 &=\frac{(C-CX_{0})\times (E(r_c)-r_f)}{((C-CX_{0})^2\times var(r_c)+var(x))^{0.5}}\\
 \end{aligned}
 $$
 
-### With Insurance
+## Sharpe Ratio With Insurance
 
-Then we calculate $E(r_I)$, $var(r_I)$ $$
+We can also calculate the Sharpe Ratio for the insurance buyer, using the subsript I to represent this case. We calculate $E(r_I)$ and $var(r_I)$ 
+
+$$
 \begin{aligned}
 E(R_{I}) &= E(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
 &=\frac{(CW_{I} - P)\times E(r_c)}{C} -\frac{E(X_{ret})}{C} +\frac{r_f \times CX_{I}-P}{C}\\
@@ -79,80 +60,22 @@ var(R_{I}) &= var(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} -
 &=\frac{(CW_{I} - P)^2\times var(r_c)}{C^2} +\frac{var(X_{ret})}{C^2}-\frac{2 \times (CW_{I} - P) \times cov(X_{ret},r_c)}{C^2} \\
 &=\frac{(C - P)^2\times var(r_c)}{C^2} +\frac{var(X_{ret})}{C^2}
 \end{aligned}
-$$ Then We can calculate the Sharpe Ratio under the with Insurance case
+$$ 
+
+Now we calculate the Sharpe Ratio under the insurance case:
 
 $$
 \begin{aligned}
-Sharpe\ Ratio&=
-\frac{E(\ R_I)-r_f}{\sigma_{R_0}}\\
+\text{Sharpe Ratio}_I &= \frac{E(R_I)-r_f}{\sigma_{R_0}}\\
 &=\frac{(C - P)\times E(r_c))-P-C \times rf}{C}\ / (\frac{(C-P)^2\times var(r_c)+var(X_{ret})}{C^2})^{0.5}\\
 &=\frac{C\times (E(r_c)-r_f)-P \times(1+E(r_c))}{((C-P)^2\times var(r_c)+var(X_{ret}))^{0.5}}\\
 \end{aligned}
-$$ Finally, we can simplify and compare these 2 Sharpe Ratio. I haven't gone
-through strict calculation yet, but via simple comparison, we can find that with
-the increase of var(x), the 'with insurance' Sharpe Ratio will decrease more
-slowly than 'without insurance', which shows the value of insurance.
+$$ 
+
+Finally, we can simplify and compare these 2 Sharpe Ratio. I haven't gone
+through strict calculation yet, but via simple comparison, we can find that with the increase of var(x), the 'with insurance' Sharpe Ratio will decrease more slowly than 'without insurance', which shows the value of insurance.
 
 P.S. When we compare the expected returns of 2 cases, the result would be
 exactly the same as the result in Value Creation Section. So I didn't attach it
 one more time.
 
-### Approach 2: Penalty function on Rate of Capital ($R_c$), unfinished
-
-### This approach would be more difficult in calculation
-
-### Without insurance
-
-I only assume X and $r_c$ are random variables\
-About X, I assume a distribution with $E(X) \approx 0$, and $var(X) \neq 0$\
-Then, we assume $r_c$ follows a conditional lognormal distribution based on X
-
-$$
-r_c|X \backsim 
-\begin{cases}
-lognormal(\mu_0,\sigma_0)& {X<= CX_0}\\
-lognormal(\mu_0 (1-\frac{X-CX_{0}}{CW_{0}}),\sigma_0/(1-\frac{X-CX_{0}}{CW_{0}}))& {X>CX_0}\\
-\end{cases}
-$$ Then, we can calculate $E(r_c)$, $var(r_c)$, then the $E(r_0)$, $var(r_0)$
-
-$$
-\begin{aligned}
-E(r_c)&=E(E(r_c|X))\\
-\\
-var(r_c)&=E(var(r_c|X))+var(E(r_c|X))\\
-\\
-E(R_{0}) &= E(\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
-&=\frac{CW_{0}\times E(r_c)}{C} -\frac{E(X)}{C} +\frac{r_f \times CX_{0}}{C}\\
-&=\frac{CW_{0}\times E(E(r_c|X))}{C} -\frac{E(X)}{C} +\frac{r_f \times CX_{0}}{C}\\
-&=\frac{CW_{0}\times E(E(r_c|X))}{C} +\frac{r_f \times CX_{0}}{C}\\
-\\
-var(R_{0}) &= var(\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
-&=\frac{CW_{0}^2\times var(r_c)}{C^2} +\frac{var(X)}{C^2}-\frac{2 \times CW_{0} \times cov(X,r_c)}{C^2} \\
-&=\frac{CW_{0}^2\times (E(var(r_c|X))+var(E(r_c|X)))}{C^2} +\frac{var(X)}{C^2} -\frac{2 \times CW_{0} \times (E(r_c \times X)-E(E(r_c|X))\times E(X) )}{C^2}\\
-&=\frac{CW_{0}^2\times (E(var(r_c|X))+var(E(r_c|X)))}{C^2} +\frac{var(X)}{C^2} -\frac{2 \times CW_{0} \times (E(r_c \times X))}{C^2}
-\end{aligned}
-$$
-
-### With Insurance
-
-$$
-r_c|X_{ret} \backsim 
-\begin{cases}
-lognormal(\mu_0,\sigma_0)& {X_{ret}<= CX_I }\\
-lognormal(\mu_0 (1-\frac{X-CX_{0}}{CW_{0}}),\sigma_0/(1-\frac{X-CX_{0}}{CW_{0}}))& {X_{ret}> CX_I }\\
-\end{cases}
-$$
-
-Then we calculate $E(r_I)$, $var(r_I)$ $$
-\begin{aligned}
-E(R_{I}) &= E(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
-&=\frac{(CW_{I} - P)\times E(r_c)}{C} -\frac{E(X_{ret})}{C} +\frac{r_f \times CX_{I}-P}{C}\\
-&=\frac{(CW_{I} - P)\times E(E(r_c|X_{ret}))}{C} -\frac{E(X_{ret})}{C} +\frac{r_f \times CX_{I}-P}{C}\\
-&=\frac{(CW_{I} - P)\times E(E(r_c|X_{ret}))}{C} +\frac{r_f \times CX_{I}-P}{C}\\
-\\
-var(R_{I}) &= var(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
-&=\frac{(CW_{I} - P)^2\times var(r_c)}{C^2} +\frac{var(X_{ret})}{C^2}-\frac{2 \times (CW_{I} - P) \times cov(X_{ret},r_c)}{C^2} \\
-&=\frac{(CW_{I} - P)^2\times (E(var(r_c|X_{ret}))+var(E(r_c|X_{ret})))}{C^2} +\frac{var(X_{ret})}{C^2} -\frac{2 \times (CW_{I} - P) \times (E(r_c \times X_{ret})-E(E(r_c|X_{ret}))\times E(X_{ret}) )}{C^2}\\
-&=\frac{(CW_{I} - P)^2\times (E(var(r_c|X_{ret}))+var(E(r_c|X_{ret})))}{C^2} +\frac{var(X_{ret})}{C^2} -\frac{2 \times (CW_{I} - P) \times (E(r_c \times X_{ret})}{C^2}
-\end{aligned}
-$$

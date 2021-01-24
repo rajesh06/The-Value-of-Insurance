@@ -42,12 +42,10 @@ In this section, we describe how high-excess insurance allows the insured to dep
 [^1]: This is an illustrative claim distribution that we present to support
     further development of value measurement.
 
-## Capital Deployment
-
 In order to measure of the value of insurance related to the firm's ability to
 deploy capital, we compare rates of return both with and without insurance.
 
-### Rate of Return without Insurance
+## Rate of Return without Insurance
 
 The firm's ERM strategy will require that it set aside a reserve in case it was
 to experience a capital depletion event that reduces. We denote this reserve as
@@ -55,7 +53,7 @@ $C_x$, to indicate that the reserve is a seggregation of capital to absorb
 realizations of $X$ that reduce $C$ below $C_m$. We present that capital
 allocation approach in Figure X.
 
-```{r No Insurnace, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r No Insurnace, echo=FALSE, fig.height=5, fig.width=6, message=FALSE, paged.print=FALSE, fig.cap="Capital Deployment"}
 par(mar = c(1, 1, 1, 1))
 
 scale <- 10
@@ -161,7 +159,7 @@ reserve less the value of the claim amount. The inclusion of the random variable
 $X$ indicates that the return is a function of the realized value of the loss
 event.
 
-### Rate of Return with Insurance
+## Rate of Return with Insurance
 
 If instead, the firm purchases insurance to cover a portion of loss event for a
 certain premium, using the subscript, $I$, to represent the "insurance case,"
@@ -186,7 +184,7 @@ to be a function of $Var(X - X_{ret})$. However, the firm only observes premiums
 quoted under various options. As such, it is not concerned with the function the
 insurer uses to develop its risk charge.
 
-### Value Creation
+## Value Creation
 
 We observe that the purchase insurance creates value when: $$
 \begin{aligned}

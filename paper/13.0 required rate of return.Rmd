@@ -1,7 +1,7 @@
 ---
-editor_options: 
-  markdown: 
-    wrap: 80
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 # Risk Premium Rate
@@ -22,7 +22,7 @@ volatility (denominator). More specifically, the Sharpe Ratio indicates the risk
 
 ## Sharpe Ratio without insurance
 
-As with the discussion in Section \ref{capital-deployment}, we use the naught subscript to represent the base case. We can calculate $E(R_0)$, $var(R_0)$ as presented below under the assumption that the risk free rate, $r_f$, is fixed and that that $X$ and $r_c$ are independent.
+As with the discussion in Section capital-deployment, we use the naught subscript to represent the base case. We can calculate $E(R_0)$, $var(R_0)$ as presented below under the assumption that the risk free rate, $r_f$, is fixed and that that $X$ and $r_c$ are independent.
 
 $$
 \begin{aligned}
@@ -72,10 +72,71 @@ $$
 \end{aligned}
 $$ 
 
-Finally, we can simplify and compare these 2 Sharpe Ratio. I haven't gone
-through strict calculation yet, but via simple comparison, we can find that with the increase of var(x), the 'with insurance' Sharpe Ratio will decrease more slowly than 'without insurance', which shows the value of insurance.
+## Approach 1
 
-P.S. When we compare the expected returns of 2 cases, the result would be
-exactly the same as the result in Value Creation Section. So I didn't attach it
-one more time.
+The next step should be the comparison of Sharpe Ratios under 2 cases.
+However, due to the complexity of the Sharpe Ratios formula, it would be hard to compare the Sharpe Ratios of 2 cases directly to get a clear result.
+Instead, I compare the variance.
+
+
+$$
+\begin{aligned}
+var(R_1) &< var(R_0)\\
+\frac{(C - P)^2\times var(r_c)+var(X_{ret)}}{C^2}   &< \frac{(C-CX_{0})^2\times var(r_c)+var(X)}{C^2}\\
+\frac{(C - P)^2\times var(r_c)+var(X_{ret})}{C^2} &<\frac{(C-CX_{0})^2\times var(r_c)+var(X)}{C^2}\\
+\frac{((C - P)^2-(C-CX_{0})^2) \times var(r_c)}{C^2} &< \frac{var(X)-var(X_{ret})}{C^2}\\
+\end{aligned}
+$$ 
+
+Insurance will release free capital from reserve to operation.
+With the insurance,
+the variance caused by the loss would  decrease (from $\frac{var(X)}{C^2}$ to $\frac{var(X_{ret})}{C^2}$) because the insurance can cover the loss,
+the variance caused by the operation would increase (from $(\frac{C-CX_0}{C})^2\times var(r_c)$ to $(\frac{C-P}{C})^2\times var(r_c)$) because of the increase of operation capital.
+
+Generally, the decrease of loss-caused variance would be much larger than the increase of operation-caused variance,
+which results in that  "$var(R_I) < var(R_0)$"  always hold.
+
+As we know from the definition of Sharpe Ratio, when $var(R_I)$ < $var(R_0)$, if $E(R_I)$ > $E(R_0)$, then $\text{Sharpe Ratio}_I$ would be always larger than $\text{Sharpe Ratio}_0$,
+which is a sufficient but not the necessary condition.
+
+Besides, we can derive that:
+As the increase of $var(x)$, the 'with insurance' Sharpe Ratio will decrease more slowly than 'without insurance', which proves the significance of insurance in reducing risk too.
+
+
+## Approach 2
+Another approach is assuming the $r_c$ to be a constant number to simplify the calculation, then $E(r_c)=r_c$, $var(r_c)=0$.
+
+$$
+\begin{aligned}
+\text{Sharpe Ratio}_I &> \text{Sharpe Ratio}_0\\
+\frac{C\times (E(r_c)-r_f)-P \times(1+E(r_c))}{((C-P)^2\times var(r_c)+var(X_{ret}))^{0.5}}   &> \frac{(C-CX_{0})\times (E(r_c)-r_f)}{((C-CX_{0})^2\times var(r_c)+var(x))^{0.5}}\\
+\frac{C\times (r_c-r_f)-P \times(1+r_c)}{var(X_{ret}))^{0.5}}   &> \frac{(C-CX_{0})\times (r_c-r_f)}{var(x))^{0.5}}\\
+P \times(1+r_c) &< C\times (r_c-r_f) - (C-CX_{0})\times (r_c-r_f) \times (\frac{var(x_{ret})}{var(x)})^{0.5}\\
+P  &< C\times \frac{(r_c-r_f)}{(1+r_c)} - (C-CX_{0})\times \frac{(r_c-r_f)}{(1+r_c)} \times (\frac{var(x_{ret})}{var(x)})^{0.5}\\
+P  &< \frac{(r_c-r_f)}{(1+r_c)} \times (C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5})\\
+\end{aligned}
+$$ 
+
+When $E(R_I) > E(r_0)$, $P_1 < CX_0 \times \dfrac{(r_c - r_f)}{(1 + r_c)}$
+
+When $\text{Sharpe Ratio}_I > \text{Sharpe Ratio}_0$, $P_2< \frac{(r_c-r_f)}{(1+r_c)} \times (C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5})$
+
+
+$$
+\begin{aligned}
+\text{Range of P}_2 - \text{Range of P}_1
+&= \frac{(r_c-r_f)}{(1+r_c)} \times (C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5}) - CX_0 \times \dfrac{(r_c - r_f)}{(1 + r_c)}\\
+&=(C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5} - CX_0) \times\dfrac{(r_c - r_f)}{(1 + r_c)}\\
+&=(C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5}) - CX_0 \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5}))\times\dfrac{(r_c - r_f)}{(1 + r_c)}\\
+&=(C - CX_0)\times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})) \times\dfrac{(r_c - r_f)}{(1 + r_c)} \\
+&>0\\
+\end{aligned}
+$$ 
+The above equation compare the range of P under the 2 conditions.
+Since the $C > CX_0$, 
+when $E(R_I) > E(r_0)$, $\text{Sharpe Ratio}_I > \text{Sharpe Ratio}_0$ will always hold.
+
+This is caused by that "$var(R_I) < var(R_0)$"  always hold, so even when  $E(R_I) < E(r_0)$, $\text{Sharpe Ratio}_I$ is still possible to be larger than  $\text{Sharpe Ratio}_0$
+
+
 

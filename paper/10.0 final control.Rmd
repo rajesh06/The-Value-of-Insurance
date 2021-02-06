@@ -8,7 +8,7 @@ output:
   pdf_document: 
     fig_caption: yes
     number_sections: true
-abstract: "Insurance provides value to the insured both as a source of loss reimbursment and contingent capital. The value of working layers lies more in claims reimbursement while high layer excess insurance, in particular, serves mostly as coningent capital. Firms rarely access high-excess layers, and the expected value of claims in those layers is minimal. As such, the insurance policy's provides two sources of value. First, it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Secondly, through reduced volatility it reduces the return on capital demanded by its shareholder. This paper describes an approach to measure this value."
+abstract: "Insurance serves both as a source of loss reimbursment and contingent capital. The value of working layers lies more in claims reimbursement while high excess layer insurance, in particular, serves mostly as contingent capital. Firms rarely access high-excess layers, and the expected value of claims in those layers is minimal. As such, the insurance policy provides two sources of value. First, it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Secondly, by decreasing earnings volatility it reduces the return on capital demanded by its shareholder. This paper describes an approach to measure these source of value."
 
 ---
 <!-- Set knitr options -->

@@ -1,64 +1,52 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-
 # Risk Premium Rate
 
-The second source of value created by insurance results from the reduction in
-the volatility of returns for insurance buyers. Investors will demand a lower
-return from firms with reduced earning volatility.
+The second source of value created by insurance results from the reduction in the volatility of returns for insurance buyers. The value creation results form the lower required return for firms with reduced earning volatility. 
 
-As we did in measuring the value through capital deployment, we first calculate
-the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer. In this analysis, we focus on the change in Sharpe Ratio.
+The Sharpe Ratio relates the risk premium required (numerator) to return volatility (denominator). More specifically, the Sharpe Ratio indicates the risk premium required for every unit of volatility. As we did in measuring the value through capital deployment, we first calculate the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer. In this analysis, we focus on the change in Sharpe Ratio.
 
 $$
 \text{Sharpe Ratio} = \frac{E(R)-r_f}{\sigma_{R}}
 $$
 
-The Sharpe Ratio relates the risk premium required (numerator) to return
-volatility (denominator). More specifically, the Sharpe Ratio indicates the risk premium required for every unit of volatility.
-
 ## Sharpe Ratio without insurance
 
-As with the discussion in Section capital-deployment, we use the naught subscript to represent the base case. We can calculate $E(R_0)$, $var(R_0)$ as presented below under the assumption that the risk free rate, $r_f$, is fixed and that that $X$ and $r_c$ are independent.
+As with the discussion in Section \@ref{capital-deployment}, we use the naught subscript to represent the base case. 
+
+We can calculate $E(R_0)$, $var(R_0)$ as presented below under the following assumptions:
+
+* The risk free rate, $r_f$, is fixed and 
+* $X$ and $r_c$ are independent.
+
+Starting with the equation from Section 2.1:
 
 $$
 \begin{aligned}
-E(R_{0}) &= E(\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
-&=\frac{CW_{0}\times E(r_c)}{C} -\frac{E(X)}{C} +\frac{r_f \times CX_{0}}{C}\\
-&=\frac{CW_{0}\times E(r_c)}{C} +\frac{r_f \times CX_{0}}{C}\\
-&=\frac{(C-CX_{0})\times E(r_c)}{C} +\frac{r_f \times CX_{0}}{C}\\
+E[R_{0}] &= E[\dfrac{r_c \times CW_{0} + r_f \times CX_{0}}{C}]\\
+&=\dfrac{CW_{0}\times r_c}{C} + \dfrac{r_f \times CX_{0}}{C}\\
+&=\frac{(C-CX_{0})\times r_c}{C} +\frac{r_f \times CX_{0}}{C}\\
 \\
-var(R_{0}) &= var(\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
-&=\frac{CW_{0}^2\times var(r_c)}{C^2} +\frac{var(X)}{C^2}-\frac{2 \times CW_{0} \times cov(X,r_c)}{C^2} \\
-&=\frac{(C-CX_{0})^2\times var(r_c)}{C^2} +\frac{var(X)}{C^2}
+Var[R_{0}] &= Var[\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
+&=\dfrac{Car(X)}{C^2}
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
 \text{Sharpe Ratio}_0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
-&=\frac{(C-CX_{0})\times E(r_c)+r_f \times CX_{0}-r_f \times C}{C} / (\frac{(C-CX_{0})^2\times var(r_c)+var(x)}{C^2})^{0.5}\\
-&=\frac{(C-CX_{0})\times (E(r_c)-r_f)}{((C-CX_{0})^2\times var(r_c)+var(x))^{0.5}}\\
+&=\frac{(C-CX_{0})\times r_c + r_f \times CX_{0}-r_f \times C}{C} / (\frac{Var(X)}{C^2})^{0.5}\\
+&=\frac{(C-CX_{0})\times (r_c-r_f)}{SD(X)}\\
 \end{aligned}
 $$
 
 ## Sharpe Ratio With Insurance
 
-We can also calculate the Sharpe Ratio for the insurance buyer, using the subsript I to represent this case. We calculate $E(r_I)$ and $var(r_I)$ 
-
+We can also calculate the Sharpe Ratio for the insurance buyer, using the subscript I to represent this case and starting with the equation from Section 2.2:
 $$
 \begin{aligned}
-E(R_{I}) &= E(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
-&=\frac{(CW_{I} - P)\times E(r_c)}{C} -\frac{E(X_{ret})}{C} +\frac{r_f \times CX_{I}-P}{C}\\
-&=\frac{(CW_{I} - P)\times E(r_c))}{C} +\frac{r_f \times CX_{I}-P}{C}\\
-&=\frac{(C - P)\times E(r_c))-P}{C}\\
+E[R_{I}] &= E[\dfrac{r_c \times (C - P) - P}{C}]\\
 \\
-var(R_{I}) &= var(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
-&=\frac{(CW_{I} - P)^2\times var(r_c)}{C^2} +\frac{var(X_{ret})}{C^2}-\frac{2 \times (CW_{I} - P) \times cov(X_{ret},r_c)}{C^2} \\
-&=\frac{(C - P)^2\times var(r_c)}{C^2} +\frac{var(X_{ret})}{C^2}
+Var[R_{I}] &= Var(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
+&=\dfrac{Var(X_{ret})}{C^2}
 \end{aligned}
 $$ 
 
@@ -67,43 +55,12 @@ Now we calculate the Sharpe Ratio under the insurance case:
 $$
 \begin{aligned}
 \text{Sharpe Ratio}_I &= \frac{E(R_I)-r_f}{\sigma_{R_0}}\\
-&=\frac{(C - P)\times E(r_c))-P-C \times rf}{C}\ / (\frac{(C-P)^2\times var(r_c)+var(X_{ret})}{C^2})^{0.5}\\
-&=\frac{C\times (E(r_c)-r_f)-P \times(1+E(r_c))}{((C-P)^2\times var(r_c)+var(X_{ret}))^{0.5}}\\
+&=\frac{(C - P)\times r_c-P-C \times rf}{C}\ / (\frac{Var(X_{ret})}{C^2})^{0.5}\\
+&=\dfrac{C\times (r_c-r_f)-P \times(1 + r_c)}{SD(X_{ret})}\\
 \end{aligned}
 $$ 
 
-## Approach 1
-
-The next step should be the comparison of Sharpe Ratios under 2 cases.
-However, due to the complexity of the Sharpe Ratios formula, it would be hard to compare the Sharpe Ratios of 2 cases directly to get a clear result.
-Instead, I compare the variance.
-
-
-$$
-\begin{aligned}
-var(R_1) &< var(R_0)\\
-\frac{(C - P)^2\times var(r_c)+var(X_{ret)}}{C^2}   &< \frac{(C-CX_{0})^2\times var(r_c)+var(X)}{C^2}\\
-\frac{(C - P)^2\times var(r_c)+var(X_{ret})}{C^2} &<\frac{(C-CX_{0})^2\times var(r_c)+var(X)}{C^2}\\
-\frac{((C - P)^2-(C-CX_{0})^2) \times var(r_c)}{C^2} &< \frac{var(X)-var(X_{ret})}{C^2}\\
-\end{aligned}
-$$ 
-
-Insurance will release free capital from reserve to operation.
-With the insurance,
-the variance caused by the loss would  decrease (from $\frac{var(X)}{C^2}$ to $\frac{var(X_{ret})}{C^2}$) because the insurance can cover the loss,
-the variance caused by the operation would increase (from $(\frac{C-CX_0}{C})^2\times var(r_c)$ to $(\frac{C-P}{C})^2\times var(r_c)$) because of the increase of operation capital.
-
-Generally, the decrease of loss-caused variance would be much larger than the increase of operation-caused variance,
-which results in that  "$var(R_I) < var(R_0)$"  always hold.
-
-As we know from the definition of Sharpe Ratio, when $var(R_I)$ < $var(R_0)$, if $E(R_I)$ > $E(R_0)$, then $\text{Sharpe Ratio}_I$ would be always larger than $\text{Sharpe Ratio}_0$,
-which is a sufficient but not the necessary condition.
-
-Besides, we can derive that:
-As the increase of $var(x)$, the 'with insurance' Sharpe Ratio will decrease more slowly than 'without insurance', which proves the significance of insurance in reducing risk too.
-
-
-## Approach 2
+## Value Creation
 Another approach is assuming the $r_c$ to be a constant number to simplify the calculation, then $E(r_c)=r_c$, $var(r_c)=0$.
 
 $$

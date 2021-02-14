@@ -152,8 +152,7 @@ R_{0} = \dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C}
 \end{equation}
 
 The numerator is the sum of the return on working capital and the return on the
-reserve, less the value of the claim amount. The inclusion of the random variable
-$X$ indicates that the firm's return is a function of the realized value of the loss event.
+reserve, less the value of the claim amount. The inclusion of the random variable $X$ indicates that the firm's return is a function of the realized value of the loss event.
 
 We note however that  expected value of $X$ in high excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations we have:
 
@@ -168,18 +167,18 @@ The firm may alternatively elect to purchases insurance to cover a portion of lo
 * $X_{ret}$ represents portion of the distribution of claims values that the
 firm retains. We allow $X_{ret}$ (i.e. to $L$) vary between 0 (equal to the no insurance case) and $X_m$ (in which case, the firm fully transfers the risk). We observe that if retention will not reduce capital below $C_m$, i.e. $0 < X_{ret} < (CW - C_m)$, then no capital need to be set aside to cover loss events, i.e., $C_x = 0$.
 
-Then, using the subscript, $I$, to represent the "insurance case," then the rate of return is as follows:
+We use subscript, $I$, to represent the "insurance case. Then we use $PX_{I}$ for premium (in the insurance case) for consistency with the $CX_{0}$ notation that we use for capital. (They both represent approaches to fund losses excess of a retention.) The rate of return is then as follows:
 
 \begin{equation}
-R_{I} = \dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C}
+R_{I} = \dfrac{r_c \times (C - CX_{I} - P) + r_f \times CX_{I} - X_{ret} - PX_{I}}{C}
 \end{equation}
 
-The rational firm (where $r_c > r_f$[^2]) purchases insurance such that it need not set aside any capital. Therefore, $CX_I = 0$ and $CW_I = C - P$.
+The rational firm (where $r_c > r_f$[^2]) purchases insurance such that it need not set aside any capital. Therefore, $CX_I = 0$ and $CW_I = C - PX_{I}$.
 
 As we noted above that $E[X] \approx 0$, we also note that $E[X_{ret}] \approx 0$ and $E[X - X_{ret}] \approx 0$. We can then simplify our rate of return equation to:
 
 \begin{equation}
-E[R_{I}] = \dfrac{r_c \times (C - P) - P}{C}
+E[R_{I}] = \dfrac{r_c \times (C - PX_{I}) - PX_{I}}{C}
 \end{equation}
 
 * We recognize that $P$ is the sum of the expected loss $E[X - X_{ret}]$ and an insurance charge. As noted, the expected loss is approximately $0$. The insurance charge compensates the insurer for underwriting the exposure and provides for a return on its capital. Therefore we expect the insurance charge to be a function of $Var(X - X_{ret})$. However, the firm only observes premiums quoted under various options. As such, it is not concerned with the function the insurer uses to develop its risk charge but it is aware that the premium is almsot entirely comprised of the risk charge.
@@ -191,15 +190,15 @@ We observe that the purchase of insurance creates value when:
 
 \begin{align}
 \nonumber E[R_I] &> E[R_0] \\
-\nonumber r_c \times (C - P) - P &> r_c \times CW_{0} + r_f \times CX_{0} \\
-\nonumber r_c \times C - r_c \times P - P &>  r_c \times CW_{0} + r_f \times CX_{0}\\
+\nonumber r_c \times (C - PX_{I}) - P &> r_c \times CW_{0} + r_f \times CX_{0} \\
+\nonumber r_c \times C - r_c \times PX_{I} - PX_{I} &>  r_c \times CW_{0} + r_f \times CX_{0}\\
 \nonumber -P \times (1 + r_c) &> r_c \times CW_{0} + r_f \times CX_{0} - r_c \times C\\
-\nonumber -P \times (1 + r_c) &> r_c \times (CW_{0} - C) + r_f \times CX_{0}\\
-\nonumber -P  &> \dfrac{r_c \times (CW_{0} - C) + r_f \times CX_{0}}{1 + r_c}\\
-\nonumber -P &> \dfrac{r_c \times (CW_{0} - C) + r_f \times CX_{0}}{1 + r_c}\\
-\nonumber -P &> \dfrac{r_c \times (-CX_{0}) + r_f \times CX_{0}}{1 + r_c}\\
-\nonumber -P &> CX_{0} \times \dfrac{r_f - r_c}{1 + r_c}\\
-P &< CX_{0} \times \dfrac{r_c - r_f}{1 + r_c}
+\nonumber -PX_{I} \times (1 + r_c) &> r_c \times (CW_{0} - C) + r_f \times CX_{0}\\
+\nonumber -PX_{I}  &> \dfrac{r_c \times (CW_{0} - C) + r_f \times CX_{0}}{1 + r_c}\\
+\nonumber -PX_{I} &> \dfrac{r_c \times (CW_{0} - C) + r_f \times CX_{0}}{1 + r_c}\\
+\nonumber -PX_{I} &> \dfrac{r_c \times (-CX_{0}) + r_f \times CX_{0}}{1 + r_c}\\
+\nonumber -PX_{I} &> CX_{0} \times \dfrac{r_f - r_c}{1 + r_c}\\
+PX_{I} &< CX_{0} \times \dfrac{r_c - r_f}{1 + r_c}
 \end{align}
 
 The equation has a straightforward intuitive interpretation that the insurance transaction creates value when the premium is less than the excess return on capital that would be earned on the reserve reduced for the return on capital if the premium amount were also deployed as capital.

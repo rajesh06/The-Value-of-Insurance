@@ -40,12 +40,12 @@ $$
 
 ## Sharpe Ratio With Insurance
 
-We can also calculate the Sharpe Ratio for the insurance buyer, using the subscript I to represent this case and starting with the equation from Section 2.2:
+We can also calculate the Sharpe Ratio for the insurance buyer, using the subscript $I$ to represent this case and starting with the equation from Section 2.2:
 $$
 \begin{aligned}
-E[R_{I}] &= E[\dfrac{r_c \times (C - P) - P}{C}]\\
+E[R_{I}] &= E[\dfrac{r_c \times (C - PX_{I}) - PX_{I}}{C}]\\
 \\
-Var[R_{I}] &= Var(\dfrac{r_c \times (CW_{I} - P) + r_f \times CX_{I} - X_{ret} - P}{C})\\
+Var[R_{I}] &= Var(\dfrac{r_c \times (C - PX_{I}) + r_f \times CX_{I} - X_{ret} - PX_{I}}{C})\\
 &=\dfrac{Var(X_{ret})}{C^2}
 \end{aligned}
 $$ 
@@ -54,8 +54,8 @@ Now we calculate the Sharpe Ratio under the insurance case:
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}_I &= \frac{E(R_I)-r_f}{\sigma_{R_0}}\\
-\nonumber &=\frac{(C - P)\times r_c-P-C \times rf}{C}\ / (\frac{Var(X_{ret})}{C^2})^{0.5}\\
-&=\dfrac{C\times (r_c-r_f)-P \times(1 + r_c)}{SD(X_{ret})}
+\nonumber &=\frac{(C - PX_{I})\times r_c-PX_{I}-C \times rf}{C}\ / (\frac{Var(X_{ret})}{C^2})^{0.5}\\
+&=\dfrac{C\times (r_c-r_f)-PX_{I} \times(1 + r_c)}{SD(X_{ret})}
 \end{align}
 
 
@@ -66,10 +66,10 @@ The insurance purchase created value when it results in an increase in the Sharp
 \begin{align}
 \nonumber \text{Sharpe Ratio}_I &> \text{Sharpe Ratio}_0\\
 \nonumber \dfrac{C\times (r_c-r_f)-P \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-CX_{0})\times (r_c-r_f)}{SD(X)}\\
-\nonumber -P \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (r_c-r_f) \times (C-CX_{0} - C)\\
-\nonumber -P \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (r_c-r_f) \times CX_{0}\\
-\nonumber -P  &> CX_{0} \times \dfrac{(r_c-r_f)}{(1 + r_c)} \times \dfrac{SD(X_{ret})}{SD(X)}\\
-P  &< CX_{0} \times \dfrac{(r_c-r_f)}{(1 + r_c)} \times \dfrac{SD(X_{ret})}{SD(X)}\\
+\nonumber -PX_{I} \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (r_c-r_f) \times (C - CX_{0} - C)\\
+\nonumber -PX_{I} \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (r_c-r_f) \times (-CX_{0})\\
+\nonumber -PX_{I}  &> - CX_{0} \times \dfrac{(r_c-r_f)}{(1 + r_c)} \times \dfrac{SD(X_{ret})}{SD(X)}\\
+PX_{I}  &< CX_{0} \times \dfrac{(r_c-r_f)}{(1 + r_c)} \times \dfrac{SD(X_{ret})}{SD(X)}
 \end{align}
 
-
+In interpreting this equation, we should recognize that the unlimited variance of claim amounts may be allocated between retained and excess (insured) components. As such, when the insured retains more risk, ....

@@ -1,5 +1,5 @@
 ---
-title: "The Value of High-Excess Commercial Insurance (working title)"
+title: "On the Value of High-Excess Commercial Insurance"
 author:
 - Zhenkai Zhu    
 - Rajesh Sahasrabuddhe      
@@ -8,7 +8,7 @@ output:
   pdf_document: 
     fig_caption: yes
     number_sections: true
-abstract: "Insurance serves both as a source of loss reimbursment and contingent capital. The value of working layers lies more in claims reimbursement while high excess layer insurance, in particular, serves mostly as contingent capital. Firms rarely access high-excess layers, and the expected value of claims in those layers is minimal. As such, the insurance policy provides two sources of value. First, it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Secondly, by decreasing earnings volatility it reduces the return on capital demanded by its shareholder. This paper describes an approach to measure these source of value."
+abstract: "Insurance serves both as a source of loss reimbursment and contingent capital. Working layers principally provide loss reimbursement while high excess layer insurance serve mostly as contingent capital. Firms rarely access high excess layers, and the expected value of claims in those layers is minimal. As such, the insurance policy provides two sources of value. First, it allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event. Secondly, by decreasing earnings volatility it reduces the return on capital demanded by its shareholder. This paper describes an approach to measure these source of value."
 
 ---
 <!-- Set knitr options -->
@@ -28,8 +28,6 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- Section 3: Required Rate of Return -->
 ```{r child = here::here('paper', '13.0 required rate of return.Rmd')}
 ```
-
-
 
 
 \newpage

@@ -1,4 +1,4 @@
-# Risk Premium Rate
+# Risk Adjustment to Required Return
 
 The second source of value created by insurance results from the reduction in the volatility of returns for insurance buyers. The value creation results form the lower required return for firms with reduced earning volatility. 
 
@@ -26,17 +26,17 @@ E[R_{0}] &= E[\dfrac{r_c \times CW_{0} + r_f \times CX_{0}}{C}]\\
 &=\frac{(C-CX_{0})\times r_c}{C} +\frac{r_f \times CX_{0}}{C}\\
 \\
 Var[R_{0}] &= Var[\dfrac{r_c \times CW_{0} + r_f \times CX_{0} - X}{C})\\
-&=\dfrac{Car(X)}{C^2}
+&=\dfrac{Var(X)}{C^2}
 \end{aligned}
 $$
 
-$$
-\begin{aligned}
-\text{Sharpe Ratio}_0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
-&=\frac{(C-CX_{0})\times r_c + r_f \times CX_{0}-r_f \times C}{C} / (\frac{Var(X)}{C^2})^{0.5}\\
-&=\frac{(C-CX_{0})\times (r_c-r_f)}{SD(X)}\\
-\end{aligned}
-$$
+
+\begin{align}
+\nonumber \text{Sharpe Ratio}_0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
+\nonumber &=\frac{(C-CX_{0})\times r_c + r_f \times CX_{0}-r_f \times C}{C} / (\frac{Var(X)}{C^2})^{0.5}\\
+\nonumber  &=\frac{(C-CX_{0})\times (r_c-r_f)}{SD(X)}\\
+\end{align}
+
 
 ## Sharpe Ratio With Insurance
 
@@ -52,48 +52,24 @@ $$
 
 Now we calculate the Sharpe Ratio under the insurance case:
 
-$$
-\begin{aligned}
-\text{Sharpe Ratio}_I &= \frac{E(R_I)-r_f}{\sigma_{R_0}}\\
-&=\frac{(C - P)\times r_c-P-C \times rf}{C}\ / (\frac{Var(X_{ret})}{C^2})^{0.5}\\
-&=\dfrac{C\times (r_c-r_f)-P \times(1 + r_c)}{SD(X_{ret})}\\
-\end{aligned}
-$$ 
+\begin{align}
+\nonumber \text{Sharpe Ratio}_I &= \frac{E(R_I)-r_f}{\sigma_{R_0}}\\
+\nonumber &=\frac{(C - P)\times r_c-P-C \times rf}{C}\ / (\frac{Var(X_{ret})}{C^2})^{0.5}\\
+&=\dfrac{C\times (r_c-r_f)-P \times(1 + r_c)}{SD(X_{ret})}
+\end{align}
+
 
 ## Value Creation
-Another approach is assuming the $r_c$ to be a constant number to simplify the calculation, then $E(r_c)=r_c$, $var(r_c)=0$.
-
-$$
-\begin{aligned}
-\text{Sharpe Ratio}_I &> \text{Sharpe Ratio}_0\\
-\frac{C\times (E(r_c)-r_f)-P \times(1+E(r_c))}{((C-P)^2\times var(r_c)+var(X_{ret}))^{0.5}}   &> \frac{(C-CX_{0})\times (E(r_c)-r_f)}{((C-CX_{0})^2\times var(r_c)+var(x))^{0.5}}\\
-\frac{C\times (r_c-r_f)-P \times(1+r_c)}{var(X_{ret}))^{0.5}}   &> \frac{(C-CX_{0})\times (r_c-r_f)}{var(x))^{0.5}}\\
-P \times(1+r_c) &< C\times (r_c-r_f) - (C-CX_{0})\times (r_c-r_f) \times (\frac{var(x_{ret})}{var(x)})^{0.5}\\
-P  &< C\times \frac{(r_c-r_f)}{(1+r_c)} - (C-CX_{0})\times \frac{(r_c-r_f)}{(1+r_c)} \times (\frac{var(x_{ret})}{var(x)})^{0.5}\\
-P  &< \frac{(r_c-r_f)}{(1+r_c)} \times (C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5})\\
-\end{aligned}
-$$ 
-
-When $E(R_I) > E(r_0)$, $P_1 < CX_0 \times \dfrac{(r_c - r_f)}{(1 + r_c)}$
-
-When $\text{Sharpe Ratio}_I > \text{Sharpe Ratio}_0$, $P_2< \frac{(r_c-r_f)}{(1+r_c)} \times (C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5})$
+The insurance purchase created value when it results in an increase in the Sharpe Ratio. 
 
 
-$$
-\begin{aligned}
-\text{Range of P}_2 - \text{Range of P}_1
-&= \frac{(r_c-r_f)}{(1+r_c)} \times (C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5}) - CX_0 \times \dfrac{(r_c - r_f)}{(1 + r_c)}\\
-&=(C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})+CX_0 \times (\frac{var(x_{ret})}{var(x)})^{0.5} - CX_0) \times\dfrac{(r_c - r_f)}{(1 + r_c)}\\
-&=(C \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5}) - CX_0 \times (1- (\frac{var(x_{ret})}{var(x)})^{0.5}))\times\dfrac{(r_c - r_f)}{(1 + r_c)}\\
-&=(C - CX_0)\times (1- (\frac{var(x_{ret})}{var(x)})^{0.5})) \times\dfrac{(r_c - r_f)}{(1 + r_c)} \\
-&>0\\
-\end{aligned}
-$$ 
-The above equation compare the range of P under the 2 conditions.
-Since the $C > CX_0$, 
-when $E(R_I) > E(r_0)$, $\text{Sharpe Ratio}_I > \text{Sharpe Ratio}_0$ will always hold.
-
-This is caused by that "$var(R_I) < var(R_0)$"  always hold, so even when  $E(R_I) < E(r_0)$, $\text{Sharpe Ratio}_I$ is still possible to be larger than  $\text{Sharpe Ratio}_0$
-
+\begin{align}
+\nonumber \text{Sharpe Ratio}_I &> \text{Sharpe Ratio}_0\\
+\nonumber \dfrac{C\times (r_c-r_f)-P \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-CX_{0})\times (r_c-r_f)}{SD(X)}\\
+\nonumber -P \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (r_c-r_f) \times (C-CX_{0} - C)\\
+\nonumber -P \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (r_c-r_f) \times CX_{0}\\
+\nonumber -P  &> CX_{0} \times \dfrac{(r_c-r_f)}{(1 + r_c)} \times \dfrac{SD(X_{ret})}{SD(X)}\\
+P  &< CX_{0} \times \dfrac{(r_c-r_f)}{(1 + r_c)} \times \dfrac{SD(X_{ret})}{SD(X)}\\
+\end{align}
 
 

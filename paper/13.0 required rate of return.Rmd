@@ -13,12 +13,12 @@ $$
 As with the discussion in Section \@ref{capital-deployment}, we use the naught subscript to represent the base case. 
 
 We can calculate $E(R_0)$, $Var(R_0)$ as presented below under the following assumptions:
-
-* The risk free rate, $r_f$, is fixed and 
+  
+* The risk free rate, $r_f$, is fixed and    
 * $X$ and $r_c$ are independent.
 
 Starting with the equation from Section 2.1:
-
+  
 $$
 \begin{aligned}
 E[R_{0}] &= E[\dfrac{r_c \times CW_{0} + r_f \times C_{X}^{0}}{C}]\\
@@ -30,13 +30,11 @@ Var[R_{0}] &= Var[\dfrac{r_c \times CW_{0} + r_f \times C_{X}^{0} - X}{C})\\
 \end{aligned}
 $$
 
-
 \begin{align}
 \nonumber \text{Sharpe Ratio}_0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
 \nonumber &=\frac{(C-C_{X}^{0})\times r_c + r_f \times C_{X}^{0}-r_f \times C}{C} / (\frac{Var(X)}{C^2})^{0.5}\\
 \nonumber  &=\frac{(C-C_{X}^{0})\times (r_c-r_f)}{SD(X)}\\
 \end{align}
-
 
 ## Sharpe Ratio With Insurance
 
@@ -44,24 +42,21 @@ We can also calculate the Sharpe Ratio for the insurance buyer, using the subscr
 $$
 \begin{aligned}
 E[R_{I}] &= E[\dfrac{r_c \times (C - P^{I}) - P^{I}}{C}]\\
-\\
 Var[R_{I}] &= Var(\dfrac{r_c \times (C - P^{I}) + r_f \times C_{X}^{I} - X_{ret} - P^{I}}{C})\\
-&=\dfrac{Var(X_{ret})}{C^2}
+Var[R_{I}] &=\dfrac{Var(X_{ret})}{C^2}
 \end{aligned}
 $$ 
-
+  
 Now we calculate the Sharpe Ratio under the insurance case:
 
 \begin{align}
-\nonumber \text{Sharpe Ratio}_I &= \frac{E(R_I)-r_f}{\sigma_{R_0}}\\
-\nonumber &=\frac{(C - P^{I})\times r_c-P^{I}-C \times rf}{C}\ / (\frac{Var(X_{ret})}{C^2})^{0.5}\\
+\nonumber \text{Sharpe Ratio}_I &= \dfrac{E(R_I)-r_f}{\sigma_{R_0}}\\
+\nonumber &=\dfrac{(C - P^{I}) \times r_c-P^{I} - C \times r_f}{C} / (\dfrac{Var(X_{ret})}{C^2})^{0.5}\\
 &=\dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})}
 \end{align}
 
-
 ## Value Creation
 The insurance purchase created value when it results in an increase in the Sharpe Ratio. 
-
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}_I &> \text{Sharpe Ratio}_0\\
@@ -70,15 +65,15 @@ The insurance purchase created value when it results in an increase in the Sharp
 \nonumber -P^{I} \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)}\times (C-C_{X}^{0}) \times (r_c-r_f)- C \times (r_c-r_f)\\
 \nonumber -P^{I} \times(1 + r_c) &> (r_c-r_f) \times [\dfrac{SD(X_{ret})}{SD(X)}\times (C-C_{X}^{0}) - C]\\ 
 \nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times (C_{X}^{0}- C) + C]\\ 
-P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [C - \dfrac{SD(X_{ret})}{SD(X)}\times CW_{0}]
+\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times C_{X}^{0} - \dfrac{SD(X_{ret})}{SD(X)}\times C + C)\\
+\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times C_{X}^{0} - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{X}^{0} + C_{W}^{0})\\
+\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times C_{X}^{0} - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{W}^{0})\\
+\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times (C - C_{W}^{0}) - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{W}^{0})\\
+\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times (-C_{W}^{0})  + C_{W}^{0})\\
+P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{W}^{0} \times (1 - \dfrac{SD(X_{ret})}{SD(X)})\label{final}
 \end{align}
 
-The interpretation of Equation (*) is slightly more difficult. However, we can recognize that second term on the righthand side is a measure of capital unavailable deployment and: 
 
-- $\dfrac{SD(X_{ret})}{SD(X)} \leq 1$
-- if $\dfrac{SD(X_{ret})}{SD(X)} = 1$, then we have the no insurance case and the second term simplifies to $C_{X}^{0}$
-- if $\dfrac{SD(X_{ret})}{SD(X)} < 1$, then the second term is greater than $C_{X}^{0}$.
+The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation(!). However, we can recognize that first term on the righthand side is a measure of value of capital deployment from equation (!). Then the second terms becomes the value provided by reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further we its intuitive that the reduced redution in risk would apply to the excess returns on working capital i.e., $((1 + r_c) \times C_{W}^{0})$.
 
-we can recognize that the unlimited variance of claim amounts may be allocated between retained and excess (insured) components. As such, when the insured retains more risk, the acceptable premium for the excess components would decrease linearly, the rate of decrease also depends on the capital and the interest rate.
 
-So we can now undertsand that we can pay a higher premiums than we derived in Equation (*) becuase we received the value of risk reduction.

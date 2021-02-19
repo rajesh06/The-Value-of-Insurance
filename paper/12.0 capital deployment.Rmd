@@ -45,7 +45,7 @@ In order to measure of the value of insurance related to the firm's ability to d
 
 When a firm retains risk, it must allocate capital for that risk. The firm may allocate that capital with or without a formal analysis as to the amount of capital that it must set aside. In this section, we present an example of actions that a firm with an ERM strategy may take when faced with risk.  We recognize that not all firms will allocate capital using this type of analysis. 
 
-The firm's ERM strategy will require that it set aside a reserve for the possibility of that it experiences a capital depletion event. We denote this reserve as $CX$, to indicate that the reserve is a segregation of capital to absorb realizations of $X$ that reduce $C$ below $C_m$. We present that capital allocation approach in Figure X.
+The firm's ERM strategy will require that it set aside a reserve for the possibility of that it experiences a capital depletion event. We denote this reserve as $C_{X}$, to indicate that the reserve is a segregation of capital to absorb realizations of $X$ that reduce $C$ below $C_m$. We present that capital allocation approach in Figure X.
 
 ```{r No Insurnace, echo=FALSE, fig.height=4, fig.width=6, message=FALSE, paged.print=FALSE, fig.cap="Capital Deployment"}
 par(mar = c(1, 1, 1, 1))
@@ -148,7 +148,7 @@ Using the naught superscript to represent this base case, the rate of return is
 then as follows:
 
 \begin{equation}
-R_{0} = \dfrac{r_c \times C_{W}^{I} + r_f \times C_{X}^{0} - X}{C}
+R_{0} = \dfrac{r_c \times C_{W}^{0} + r_f \times C_{X}^{0} - X}{C}
 \end{equation}
 
 The numerator is the sum of the return on working capital and the return on the
@@ -157,7 +157,7 @@ reserve, less the value of the claim amount. The inclusion of the random variabl
 We note however that  expected value of $X$ in high excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations we have:
 
 \begin{equation}
-E[R_{0}] = \dfrac{r_c \times C_{W}^{I} + r_f \times C_{X}^{0}}{C}
+E[R_{0}] = \dfrac{r_c \times C_{W}^{0} + r_f \times C_{X}^{0}}{C}
 \end{equation}
 
 ## Rate of Return with Insurance
@@ -170,10 +170,10 @@ firm retains. We allow $X_{ret}$ (i.e. to $L$) vary between 0 (equal to the no i
 We use superscript, $I$, to represent the "insurance case." Then we use $P^{I}$ for premium (in the insurance case) for consistency with the $C_{X}^{0}$ notation that we use for capital. (They both represent approaches to fund losses excess of a retention.) The rate of return is then as follows:
 
 \begin{equation}
-R_{I} = \dfrac{r_c \times (C - CX_{I} - P^{I}) + r_f \times CX_{I} - X_{ret} - P^{I}}{C}
+R_{I} = \dfrac{r_c \times (C - C_{X}^{I} - P^{I}) + r_f \times C_{X}^{I} - X_{ret} - P^{I}}{C}
 \end{equation}
 
-The rational firm (where $r_c > r_f$[^2]) purchases insurance such that it need not set aside any capital. Therefore, $CX_I = 0$ and $C_{W,I} = C - P^{I}$.
+The rational firm (where $r_c > r_f$[^2]) purchases insurance such that it need not set aside any capital. Therefore, $C_{X}^{I} = 0$ and $C_{W}^{I} = C - P^{I}$.
 
 As we noted above that $E[X] \approx 0$, we also note that $E[X_{ret}] \approx 0$ and $E[X - X_{ret}] \approx 0$. We can then simplify our rate of return equation to:
 

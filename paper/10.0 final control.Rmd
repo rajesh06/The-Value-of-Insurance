@@ -1,8 +1,8 @@
 ---
 title: "On the Value of High-Excess Commercial Insurance"
 author:
-- Zhenkai Zhu    
 - Rajesh Sahasrabuddhe      
+- Zhenkai Zhu    
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
   pdf_document: 
@@ -27,6 +27,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- Section 3: Required Rate of Return -->
 ```{r child = here::here('paper', '13.0 required rate of return.Rmd')}
+```
+
+<!-- Section 4: Conclusion -->
+```{r child = here::here('paper', '14.0 conclusion.Rmd')}
 ```
 
 

@@ -1,2 +1,1 @@
-
-We recognize the first two terms of equation from the conclusion of Section 2. We also recognize that $\dfrac{SD(X_{ret})}{SD(X)} < 1$. As such, we can conclude that 
+# Conclusion

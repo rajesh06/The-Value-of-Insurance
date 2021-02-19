@@ -79,4 +79,6 @@ The interpretation of Equation (*) is slightly more difficult. However, we can r
 - if $\dfrac{SD(X_{ret})}{SD(X)} = 1$, then we have the no insurance case and the second term simplifies to $C_{X}^{0}$
 - if $\dfrac{SD(X_{ret})}{SD(X)} < 1$, then the second term is greater than $C_{X}^{0}$.
 
+we can recognize that the unlimited variance of claim amounts may be allocated between retained and excess (insured) components. As such, when the insured retains more risk, the acceptable premium for the excess components would decrease linearly, the rate of decrease also depends on the capital and the interest rate.
+
 So we can now undertsand that we can pay a higher premiums than we derived in Equation (*) becuase we received the value of risk reduction.

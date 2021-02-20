@@ -1,5 +1,9 @@
 # Capital Deployment
-In this section, we describe how high-excess insurance allows the insured to deploy capital that it would otherwise need to set aside to weather an extreme loss event. We present this analysis to demonstrate conceptually why a firm would find it necessary to set aside capital rather than  as a prescriptive approach for determining the amount of capital to set aside. In our review, we assume the following:
+In this section, we describe how high-excess insurance allows the insured to deploy capital that it would otherwise need to set aside to weather an extreme loss event. 
+
+We first present an analysis to demonstrate conceptually why a firm would find it necessary to set aside capital. We do not intend this presentation to be a prescriptive approach for determining the amount of capital to set aside. 
+
+In our review, we assume the following:
 
 -   There is a fixed amount of capital, $C$, available to the firm.
 
@@ -15,7 +19,7 @@ In this section, we describe how high-excess insurance allows the insured to dep
 
     -   We denote the maximum probable claim amount as $X_m$.
 
-    -   The scale of $X$ is a function of $C_w$.
+    -   The scale of $X$ is a function of $C_W$.
 
 ```{r claim-distribution, echo=FALSE, fig.cap="Illustrative Claim (X) Distribution", fig.height=3, fig.width=5, message=FALSE, paged.print=FALSE}
     par(mar = c(2, 2, 1, 1))

@@ -1,14 +1,25 @@
 # Introduction
 
+High-excess layer policies prin
+
+
+Specifically, working layers principally provide loss reimbursement while high excess layer insurance serve mostly as contingent capital.   "
+
+## Commercial Insurance Programs 
+
 Commercial insurance programs are often depicted as "towers." (See Figure \ref{fig:tower}) Extending this analogy, the lowest floors of the tower are typically comprised of risk retained by the insured. The middle floors include commercially insured working layers.  High excess layer insurance resides in the penthouse. 
 
-Each of these layers has a cost to it. Insurers establish premiums which are sufficient to cover claim costs, expenses and a profit provision. The profit provision will be proportional to the volatility of the risk. That is, supporting insurer capital is directly proportional to the volatility of the business. As a result, more volatile business will require additional (absolute) profit that the insurer must return to its shareholder. In describing the cost for various insurance layers, we ignore expenses and refer to the profit provision as a capital charge. 
+Each of these layers has a cost to it. Insurers establish premiums which are sufficient to cover claim costs, expenses and return a profit to its shareholder. 
 
-*   The cost of the lowest layers will have a reasonable degree of predictability. The cost for these layers will principally be the expected loss with a minimal capital charge for volatility. There may also be frictional costs associated with risk retention such as increased audit and actuarial fees and claims costs from legal counsel and third party claim administrators.
+The profit provision will be proportional to the volatility of the risk. That is, the required supporting insurer capital is directly proportional to the volatility of the business. As a result, more volatile business will require additional (absolute) profit that the insurer must return to its shareholder. 
 
-*   The middle layers provide coverage for claims related to events that occur with a degree of regularity. The amount of claims may not be reasonably predictable in a single year but would be predictable over a longer-term time horizon. They insurance coverage provides value to the insured by smoothing claim volatility \emph{over time}. There may be multiple insurers in the higher working layers.
+In describing the cost for various insurance layers below, we ignore expenses and refer to the profit provision as a capital charge. 
 
-*   Insureds generally do not expect to access coverage from the highest layers. The expected claims will likely be close to \$0. The variance of claims in this layer however may be significant.  Insurance in this layer smooths claims volatility \emph{over risks and time}. As a result of the need to smooth volatility across risks, there are often multiple insurers in these layers, each with a pro-rata share. These high excess layers are the focus of this paper.
+*   The cost of the lowest layers will have a reasonable degree of predictability. Because costs are predictable, the value of insurance is minimal and insureds will therefore typically retain this risk. ^[The insured may realize value though specialized risk or claims management services provided by the insurer.] The cost for these layers will principally be the expected loss with a minimal capital charge for volatility. There may also be frictional costs associated with risk retention such as increased audit and actuarial fees and claims costs from legal counsel and third party claim administrators.
+
+*   The middle layers provide coverage for claims related to events that occur with a degree of regularity. The amount of claims may not be reasonably predictable in a single year but would be predictable over a longer time horizon. The insurance coverage provides value to the insured by smoothing claim volatility \emph{over time}. There may be multiple insurers in the higher working layers.
+
+*   Insureds generally do not expect to access coverage from the highest layers. The expected claims will likely be close to $0. The variance of claims in this layer however may be significant.  Insurance in this layer smooths claims volatility \emph{over risks and time}. As a result of the need to smooth volatility across risks, there are often multiple insurers in these layers, each with a pro-rata share. These high excess layers are the focus of this paper.
 
 ```{r insurance tower, echo=FALSE, fig.height=4, fig.width=3, fig.cap= "\\label{fig:tower}Example Insurance Tower"}
 par(mar = c(1, 0, 0, 0))
@@ -27,25 +38,35 @@ text(x = 0.85, y = 7, srt = 90, label = 'Coverage Layer\n(not to scale)', cex = 
 
 ## The Value of High Excess Layers
 
-Despite insureds not expected to access higher layers as expected claim amounts are minimal, premiums in these layers can be significant. At times buyers refer to these layers as "sleep insurance"; that is the insurance allows the buyer to sleep at night. In this paper, we explore approach that the buyer can consider to understand whether there is *financial value* ^[That is, the value beyond the restful night of sleep.] to the insurance transaction. Measuring this value provides the insured a basis upon which to assess the premium established by the insurer.
+Despite minimal expected claim values, premiums in these layers can be significant. At times buyers refer to these layers as "sleep insurance"; that is the insurance allows the buyer to sleep at night. In this paper, we explore approach that the buyer can consider to understand whether there is *financial value* ^[That is, the value beyond the restful night of sleep.] to the insurance transaction. 
 
-To assess the value, we should understand that the primary benefit of this layer is not in the expected loss but the protection of capital that this layer of insurance provides to the insured. Indeed, in this layer, insureds often consider the insurance as part of its capital structure rather than as an operational cost. Beyond this protection of capital, insurance will also reduce earning volatility and potentially improve the attractiveness of the firm to investors. In this paper, we review these benefits of insurance.
+To assess the value, we should understand that the primary benefit of this layer is not in the loss reimbursement but the protection of capital that this layer of insurance provides to the insured. 
+
+* Insureds often consider the insurance in this layer as part of its capital structure rather than as an operational cost.  The insurance allows the firm to deploy the capital that it would otherwise need to set aside to weather an extreme loss event.
+
+* In addition to this protection of capital, insurance will also reduce earning volatility and potentially improve the attractiveness of the firm to investors. 
+
+In this paper, we will quantify these benefits of insurance.
 
 ## Literature Search
 
-Most research related to capital in the insurance transaction focuses on the \emph{insurer's} return on capital rather than the protection of the \emph{insured's} capital. The limited research related to the insured's preference focuses on utility theory (as a function of wealth) and that research is generally presented in the context of personal insurance coverages (such as homeowners). Capital protection and wealth maximization are related concepts and utility functions (generically) provide a basis to assess alternatives. This is not dissimilar to the approach that we present in this paper.
+Most research related to capital in the insurance transaction focuses on the \emph{insurer's} return on capital rather than the protection of the \emph{insured's} capital. The limited research related to the insured's preference focuses on utility theory (as a function of wealth) and that research is generally presented in the context of personal insurance coverages (such as homeowners). 
+
+Capital protection and wealth maximization are related concepts and utility functions (generically) provide a basis to assess alternatives. This is not dissimilar to the approach that we present in this paper. However, there are differences to the reaseacrh we present:
 
 * Utility functions are typically abstract whereas the measurement approach we present in this paper is more specifically defined. 
 
 * We frame our approach in the context of commercial insurance and present two value considerations for a commercial insured. 
 
-We provide the papers that we reviewed in Appendix \ref{literature-review},
+We list the papers that we reviewed in Appendix \ref{literature-review},
 
-## Measuring Value
+## Presntation Outline
 
 In this paper we now consider the two primary sources of value for the insured:
 
 -   The ability to deploy capital that it would have otherwise had to set aside for an insurable event. We present our review of this source of value in Section \ref{capital-deployment}.
 
 - Reduced volatility of earnings and the resulting reduction in required     return. We present our review of this source of value in Section \ref{risk-adjustment-to-required-return}.
+
+We use the Sharpe ratio in our analysis in Section \ref{risk-adjustment-to-required-return}. As we will discover from this analysis, the measured value from the Sharpe ratio will include the value related to capital deployment.
 

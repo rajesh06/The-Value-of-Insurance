@@ -66,7 +66,7 @@ In this paper we now consider the two primary sources of value for the insured:
 
 -   The ability to deploy capital that it would have otherwise had to set aside for an insurable event. We present our review of this source of value in Section \ref{capital-deployment}.
 
-- Reduced volatility of earnings and the resulting reduction in required     return. We present our review of this source of value in Section \ref{risk-adjustment-to-required-return}.
+- Reduced volatility of earnings and the resulting reduction in required return. We present our review of this source of value in Section \ref{risk-adjustment-to-required-return}.
 
-We use the Sharpe ratio in our analysis in Section \ref{risk-adjustment-to-required-return}. As we will discover from this analysis, the measured value from the Sharpe ratio will include the value related to capital deployment.
+We use the Sharpe Ratio in our analysis in Section \ref{risk-adjustment-to-required-return}. As we will discover from this analysis, the measured value from the Sharpe atio will include the value related to capital deployment.
 

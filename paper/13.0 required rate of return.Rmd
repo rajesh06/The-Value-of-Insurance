@@ -8,72 +8,74 @@ $$
 \text{Sharpe Ratio} = \frac{E(R)-r_f}{\sigma_{R}}
 $$
 
-## Sharpe Ratio without insurance
+As we are concerned with the margin value created by the insurance transaction, we can calculate $E(R)$, $Var(R)$ in this section under the following assumptions:
 
-As with the discussion in Section \@ref{capital-deployment}, we use the naught subscript to represent the base case. 
-
-We can calculate $E(R_0)$, $Var(R_0)$ as presented below under the following assumptions:
-  
 * The risk free rate, $r_f$, is fixed and    
 * $X$ and $r_c$ are independent.
 
-Starting with the equation from Section 2.1:
-  
+## Sharpe Ratio without insurance
+
+As with the discussion in Section \ref{capital-deployment}, we use the naught superscript to represent the base case.
+
+Recall that we developed the expected rate of return in Section \ref{rate-of-return-without-insurance}. We rewrite equation \ref{eqn:exp-return-base} as presented below.
+
 $$
 \begin{aligned}
-E[R_{0}] &= E[\dfrac{r_c \times CW_{0} + r_f \times C_{X}^{0}}{C}]\\
-&=\dfrac{CW_{0}\times r_c}{C} + \dfrac{r_f \times C_{X}^{0}}{C}\\
-&=\frac{(C-C_{X}^{0})\times r_c}{C} +\frac{r_f \times C_{X}^{0}}{C}\\
-\\
-Var[R_{0}] &= Var[\dfrac{r_c \times CW_{0} + r_f \times C_{X}^{0} - X}{C})\\
+E[R^{0}] &= E\left[\dfrac{r_c \times C_w^{0} + r_f \times C_{x}^{0}}{C}\right]\\
+&=\dfrac{(C-C_{x}^{0})\times r_c + r_f \times C_{x}^{0}}{C}\\
+\end{aligned}
+$$
+
+We start equation \ref{eqn:return-base} and develop the variance under the simplifying conditions described at the beginning of this section.
+
+$$
+\begin{aligned}
+Var[R^{0}] &= Var\left[\dfrac{r_c \times C_w^{0} + r_f \times C_{x}^{0} - X}{C}\right]\\
 &=\dfrac{Var(X)}{C^2}
 \end{aligned}
 $$
+We can now calculate the Sharpe Ratio without insurance.
 
 \begin{align}
-\nonumber \text{Sharpe Ratio}_0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
-\nonumber &=\frac{(C-C_{X}^{0})\times r_c + r_f \times C_{X}^{0}-r_f \times C}{C} / (\frac{Var(X)}{C^2})^{0.5}\\
-\nonumber  &=\frac{(C-C_{X}^{0})\times (r_c-r_f)}{SD(X)}\\
+\nonumber \text{Sharpe Ratio}^0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
+\nonumber &=\dfrac{\left[\dfrac{(C-C_{x}^{0})\times r_c + r_f \times C_{x}^{0}-r_f \times C}{C}\right]}{\left[\dfrac{Var(X)}{C^2}\right]^{0.5}}\\
+           &=\frac{(C-C_{x}^{0})\times (r_c-r_f)}{SD(X)} \label{eqn:sharpe-base}
 \end{align}
 
-## Sharpe Ratio With Insurance
+## Sharpe Ratio with Insurance
 
-We can also calculate the Sharpe Ratio for the insurance buyer, using the subscript $I$ to represent this case and starting with the equation from Section 2.2:
+We can also calculate the Sharpe Ratio for the insurance buyer, using the subscript $I$ to represent this case. As with the no insurance case, we start with the equation \ref{eqn:exp-return-ins} from Section\ref{rate-of-return-without-insurance}:
 $$
 \begin{aligned}
-E[R_{I}] &= E[\dfrac{r_c \times (C - P^{I}) - P^{I}}{C}]\\
-Var[R_{I}] &= Var(\dfrac{r_c \times (C - P^{I}) + r_f \times C_{X}^{I} - X_{ret} - P^{I}}{C})\\
-Var[R_{I}] &=\dfrac{Var(X_{ret})}{C^2}
+E[R^{I}] &= E[\dfrac{r_c \times (C - P^{I}) - P^{I}}{C}]
 \end{aligned}
-$$ 
-  
+$$
+
+We start equation \ref{eqn:return-ins} and develop the variance under the simplifying conditions described at the beginning of this section.
+$$
+\begin{aligned}
+Var[R^{I}] &= Var(\dfrac{r_c \times (C - P^{I}) + r_f \times C_{x}^{I} - X_{ret} - P^{I}}{C})\\
+Var[R^{I}] &=\dfrac{Var(X_{ret})}{C^2}
+\end{aligned}
+$$
+
 Now we calculate the Sharpe Ratio under the insurance case:
 
 \begin{align}
-\nonumber \text{Sharpe Ratio}_I &= \dfrac{E(R_I)-r_f}{\sigma_{R_0}}\\
-\nonumber &=\dfrac{(C - P^{I}) \times r_c-P^{I} - C \times r_f}{C} / (\dfrac{Var(X_{ret})}{C^2})^{0.5}\\
-&=\dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})}
+\nonumber \text{Sharpe Ratio}^I &= \dfrac{E(R_I)-r_f}{\sigma_{R^0}}\\
+\nonumber &=\dfrac{\left[\dfrac{(C - P^{I}) \times r_c-P^{I} - C \times r_f}{C}\right]}{\left[\dfrac{Var(X_{ret})}{C^2}\right]^{0.5}}\\
+&=\dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} \label{eqn:sharpe-ins}
 \end{align}
 
 ## Value Creation
-The insurance purchase created value when it results in an increase in the Sharpe Ratio. 
+The insurance purchase created value when it results in an increase in the Sharpe Ratio. We can use equation \ref{eqn:sharpe-base} and equation \ref{eqn:sharpe-ins} to calculate the maximum premium that results in value creation. We present that equation below. We include the complete algebreic derivation in Appendix \ref{complete-algebreic-derivation-of-value-creation-equation}.
 
 \begin{align}
-\nonumber \text{Sharpe Ratio}_I &> \text{Sharpe Ratio}_0\\
-\nonumber \dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-C_{X}^{0})\times (r_c-r_f)}{SD(X)}\\
-\nonumber C\times (r_c-r_f)-P^{I} \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)} \times (C-C_{X}^{0})\times (r_c-r_f)\\
-\nonumber -P^{I} \times(1 + r_c) &> \dfrac{SD(X_{ret})}{SD(X)}\times (C-C_{X}^{0}) \times (r_c-r_f)- C \times (r_c-r_f)\\
-\nonumber -P^{I} \times(1 + r_c) &> (r_c-r_f) \times [\dfrac{SD(X_{ret})}{SD(X)}\times (C-C_{X}^{0}) - C]\\ 
-\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times (C_{X}^{0}- C) + C]\\ 
-\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times C_{X}^{0} - \dfrac{SD(X_{ret})}{SD(X)}\times C + C)\\
-\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times C_{X}^{0} - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{X}^{0} + C_{W}^{0})\\
-\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times C_{X}^{0} - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{W}^{0})\\
-\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times (C - C_{W}^{0}) - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{W}^{0})\\
-\nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times [\dfrac{SD(X_{ret})}{SD(X)}\times (-C_{W}^{0})  + C_{W}^{0})\\
-P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{X}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{W}^{0} \times (1 - \dfrac{SD(X_{ret})}{SD(X)})\label{final}
+\nonumber \text{Sharpe Ratio}^I &> \text{Sharpe Ratio}^0\\
+\nonumber \dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-C_{x}^{0})\times (r_c-r_f)}{SD(X)}\\
+P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right] \label{final}
 \end{align}
 
-
-The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation(!). However, we can recognize that first term on the righthand side is a measure of value of capital deployment from equation (!). Then the second terms becomes the value provided by reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further we its intuitive that the reduced redution in risk would apply to the excess returns on working capital i.e., $((1 + r_c) \times C_{W}^{0})$.
+The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation (\ref{eqn:cap-deploy}). However, we can recognize that first term on the righthand side is a measure of value of capital deployment from equation (\ref{eqn:cap-deploy}). Then the second terms becomes the value provided by reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further we its intuitive that the reduced reduction in risk would apply to the excess returns on working capital i.e., $((1 + r_c) \times C_{w}^{0})$.
 
 

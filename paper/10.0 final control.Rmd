@@ -17,6 +17,8 @@ abstract: "Insurance serves both as a source of loss reimbursment and contingent
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+\raggedright
+
 <!-- Section 1: Introduction -->
 ```{r child = here::here('paper', '11.0 introduction.Rmd')}
 ```
@@ -36,6 +38,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \newpage
 \appendix
-```{r child = here::here('paper', 'A-literature review.Rmd')}
+```{r child = here::here('paper', 'A-value creation derivation.Rmd')}
+```
+
+```{r child = here::here('paper', 'B-literature review.Rmd')}
 ```
 

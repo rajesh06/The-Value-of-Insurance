@@ -1,6 +1,6 @@
-# Complete Algebreic Derivation of Value Creation Equations
+# Algebraic Derivation of Value Creation Equations
 
-## Capital Deployment Value Creation Equation
+## Derivation of Capital Deployment Value Creation Equation
 \begin{align}
 \nonumber E[R^I] &> E[R^0] \\
 \nonumber r_c \times (C - P^{I}) - P^{I} &> r_c \times C_{w}^{I} + r_f \times C_{x}^{0} \\
@@ -11,10 +11,10 @@
 \nonumber -P^{I} &> \dfrac{r_c \times (C_{w}^{I} - C) + r_f \times C_{x}^{0}}{1 + r_c}\\
 \nonumber -P^{I} &> \dfrac{r_c \times (-C_{x}^{0}) + r_f \times C_{x}^{0}}{1 + r_c}\\
 \nonumber -P^{I} &> C_{x}^{0} \times \dfrac{r_f - r_c}{1 + r_c}\\
-P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c} \label{eqn:cap-deploy}
+P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c}
 \end{align}
 
-## Complete Value Creation Equation
+## Derivation of Complete Value Creation Equation
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}^I &> \text{Sharpe Ratio}^0\\
@@ -33,5 +33,5 @@ P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c} \label{eqn:cap-deploy}
 \nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times \left[\dfrac{SD(X_{ret})}{SD(X)}\times (C - C_{w}^{0})\right.\\
 \nonumber &\mathrel{\phantom{<}}\left. \quad - \dfrac{SD(X_{ret})}{SD(X)}\times C + C_{w}^{0}\right]\\
 \nonumber P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times \left[\dfrac{SD(X_{ret})}{SD(X)}\times (-C_{w}^{0})  + C_{w}^{0}\right]\\
-P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right] \label{final}
+P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right]
 \end{align}

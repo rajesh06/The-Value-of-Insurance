@@ -68,7 +68,7 @@ Now we calculate the Sharpe Ratio under the insurance case:
 \end{align}
 
 ## Complete Value Creation Equation
-The insurance purchase created value when it results in an increase in the Sharpe Ratio. We can use equation (\ref{eqn:sharpe-base}) and equation (\ref{eqn:sharpe-ins}) to calculate the maximum premium that results in value creation. We present that equation below. We include the complete algebraic derivation in Appendix \ref{complete-algebreic-derivation-of-value-creation-equation}.
+The insurance purchase created value when it results in an increase in the Sharpe Ratio. We can use equation (\ref{eqn:sharpe-base}) and equation (\ref{eqn:sharpe-ins}) to calculate the maximum premium that results in value creation. We present that equation below. We include the complete algebraic derivation in Appendix \ref{algebraic-derivation-of-value-creation-equations}.
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}^I &> \text{Sharpe Ratio}^0\\

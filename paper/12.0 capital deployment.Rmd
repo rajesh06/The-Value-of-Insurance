@@ -199,6 +199,6 @@ The insurance transaction creates value when the expected return for the insuran
 P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c} \label{eqn:cap-deploy}
 \end{align}
 
-We include the complete algebraic derivation of equation \ref{eqn:cap-deploy} in Appendix \ref{capital-deployment-value-creation-equation}. 
+We include the complete algebraic derivation of equation \ref{eqn:cap-deploy} in Appendix \ref{algebraic-derivation-of-value-creation-equations}. 
 Equation (\ref{eqn:cap-deploy}) has a straightforward, intuitive interpretation that the insurance transaction creates value when the premium is less than the excess return on capital that would be earned on the reserve reduced for the return if the premium amount were also deployed as capital.
 

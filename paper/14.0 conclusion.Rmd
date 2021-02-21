@@ -14,6 +14,6 @@ $\dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret
 
 When premiums amounts do not satisfy equation (\ref{eqn:cap-deploy}) but satisfy equation (\ref{final}), the insurance transaction will will not be accretive to the rate of return. However, the reduced rate of return will be less than the reduction in the rate of return demanded by the shareholder.
 
-When premiums amounts do not satisfy either equation (\ref{eqn:cap-deploy}) or equation (\ref{eqn:cap-deploy}), then the insurance transaction does not add financial value in excess of premiums. However, it may still provide value in supporting a restful night's sleep.
+When premiums amounts do not satisfy either equation (\ref{eqn:cap-deploy}) or equation (\ref{final}), then the insurance transaction does not add financial value in excess of premiums. However, it may still provide value in supporting a restful night's sleep.
 
 

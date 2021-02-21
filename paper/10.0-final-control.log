@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.20)  20 FEB 2021 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.20)  21 FEB 2021 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -386,11 +386,8 @@ d-pdftex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count278
 \l__pdf_internal_box=\box49
-) (./10.0-final-control.aux
-
-LaTeX Warning: Label `final' multiply defined.
-
 )
+No file 10.0-final-control.aux.
 \openout1 = `10.0-final-control.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
@@ -442,166 +439,24 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 71.
 LaTeX Info: Redefining \pageref on input line 71.
 LaTeX Info: Redefining \nameref on input line 71.
-(./10.0-final-control.out) (./10.0-final-control.out)
 \@outlinefile=\write3
 \openout3 = `10.0-final-control.out'.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=469.75502pt
-* \textheight=650.43001pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-37.0pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-3.
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-3.
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-73.
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-73.
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 73.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 73.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 73.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
-
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
-
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-16.
-(c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 119.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 119.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 119.
-[1
-
-{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
-x.map}]
-<10.0-final-control_files/figure-latex/insurance tower-1.pdf, id=90, 216.81pt x
- 289.08pt>
-File: 10.0-final-control_files/figure-latex/insurance tower-1.pdf Graphic file 
-(type pdf)
-<use 10.0-final-control_files/figure-latex/insurance tower-1.pdf>
-Package pdftex.def Info: 10.0-final-control_files/figure-latex/insurance tower-
-1.pdf  used on input line 145.
-(pdftex.def)             Requested size: 216.81938pt x 289.09251pt.
-[2 <./10.0-final-control_files/figure-latex/insurance tower-1.pdf>]
-<10.0-final-control_files/figure-latex/claim-distribution-1.pdf, id=110, 361.35
-pt x 216.81pt>
-File: 10.0-final-control_files/figure-latex/claim-distribution-1.pdf Graphic fi
-le (type pdf)
-<use 10.0-final-control_files/figure-latex/claim-distribution-1.pdf>
-Package pdftex.def Info: 10.0-final-control_files/figure-latex/claim-distributi
-on-1.pdf  used on input line 269.
-(pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-[3]
-<10.0-final-control_files/figure-latex/No Insurnace-1.pdf, id=122, 433.62pt x 2
-89.08pt>
-File: 10.0-final-control_files/figure-latex/No Insurnace-1.pdf Graphic file (ty
-pe pdf)
-<use 10.0-final-control_files/figure-latex/No Insurnace-1.pdf>
-Package pdftex.def Info: 10.0-final-control_files/figure-latex/No Insurnace-1.p
-df  used on input line 312.
-(pdftex.def)             Requested size: 433.63878pt x 289.09251pt.
-[4 <./10.0-final-control_files/figure-latex/claim-distribution-1.pdf>] [5 <./10
-.0-final-control_files/figure-latex/No Insurnace-1.pdf>] [6] [7] [8] [9] [10] [
-11] (./10.0-final-control.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `10.0-final-control.out' has not changed.
-(rerunfilecheck)             Checksum: 7CFD2782734FE90B731ACD224241EF1D;2893.
- ) 
+! I can't write on file `10.0-final-control.pdf'.
+(Press Enter to retry, or Control-Z to exit; default file extension is `.pdf')
+Please type another file name for output
+! Emergency stop.
+<to be read again> 
+                   \edef 
+l.71 \begin{document}
+                      
 Here is how much of TeX's memory you used:
- 10028 strings out of 480946
- 148030 string characters out of 5905086
- 464302 words of memory out of 5000000
- 27017 multiletter control sequences out of 15000+600000
- 471289 words of font info for 73 fonts, out of 8000000 for 9000
+ 9710 strings out of 480946
+ 141216 string characters out of 5905086
+ 440542 words of memory out of 5000000
+ 26831 multiletter control sequences out of 15000+600000
+ 406420 words of font info for 28 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,13n,74p,397b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.e
-nc}{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hex.enc}{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/l
-m-mathsy.enc}{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
-/lm/lm-ec.enc}{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvip
-s/lm/lm-mathit.enc}{c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc
-/dvips/lm/lm-ts1.enc}<c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
-ype1/public/lm/lmbx10.pfb><c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fo
-nts/type1/public/lm/lmbx12.pfb><c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-di
-st/fonts/type1/public/lm/lmbx9.pfb><c:/Users/rajes/AppData/Roaming/TinyTeX/texm
-f-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/rajes/AppData/Roaming/TinyTeX
-/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/rajes/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/rajes/AppData/Roamin
-g/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/rajes/AppData/Ro
-aming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/rajes/AppDat
-a/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/rajes/Ap
-pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/rajes
-/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/ra
-jes/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users
-/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Us
-ers/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:
-/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pf
-b><c:/Users/rajes/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy
-10.pfb>
-Output written on 10.0-final-control.pdf (11 pages, 318777 bytes).
-PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71i,1n,74p,252b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

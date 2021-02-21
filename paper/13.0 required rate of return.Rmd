@@ -1,16 +1,16 @@
 # Risk Adjustment to Required Return
 
-The second source of value created by insurance results from the reduction in the volatility of returns for insurance buyers. The value creation results form the lower required return for firms with reduced earning volatility. 
+The second source of value created by insurance results from the reduction in the volatility of returns for insurance buyers. The value creation results from the lower required return for firms with reduced earning volatility. 
 
-The Sharpe Ratio relates the risk premium required (numerator) to return volatility (denominator). More specifically, the Sharpe Ratio indicates the risk premium required for every unit of volatility. As we did in measuring the value through capital deployment, we first calculate the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer. In this analysis, we focus on the change in Sharpe Ratio.
+The Sharpe Ratio relates the risk premium required (numerator) to return volatility (denominator). More specifically, the Sharpe Ratio indicates the risk premium required for every unit of volatility. As we did in measuring the value through capital deployment, we first calculate the Sharpe Ratio without insurance (i.e., the base case) and then compare to the Sharpe Ratio for the insurance buyer.
 
 $$
 \text{Sharpe Ratio} = \frac{E(R)-r_f}{\sigma_{R}}
 $$
 
-As we are concerned with the margin value created by the insurance transaction, we can calculate $E(R)$, $Var(R)$ in this section under the following assumptions:
+As we are concerned with the marginal value created by the insurance transaction, we can calculate $E(R)$, $Var(R)$ in this section under the following assumptions:
 
-* The risk free rate, $r_f$, is fixed and    
+* The risk-free rate, $r_f$, is fixed and    
 * $X$ and $r_c$ are independent.
 
 ## Sharpe Ratio without insurance
@@ -26,7 +26,7 @@ E[R^{0}] &= E\left[\dfrac{r_c \times C_w^{0} + r_f \times C_{x}^{0}}{C}\right]\\
 \end{aligned}
 $$
 
-We start equation \ref{eqn:return-base} and develop the variance under the simplifying conditions described at the beginning of this section.
+We start with equation (\ref{eqn:return-base}) and develop the variance of returns under the simplifying conditions described at the beginning of this section.
 
 $$
 \begin{aligned}
@@ -44,14 +44,14 @@ We can now calculate the Sharpe Ratio without insurance.
 
 ## Sharpe Ratio with Insurance
 
-We can also calculate the Sharpe Ratio for the insurance buyer, using the subscript $I$ to represent this case. As with the no insurance case, we start with the equation \ref{eqn:exp-return-ins} from Section\ref{rate-of-return-without-insurance}:
+We can also calculate the Sharpe Ratio for the insurance buyer, using the superscript $I$ to represent this case. As with the no insurance case, we start with equation (\ref{eqn:exp-return-ins}) from Section\ref{rate-of-return-without-insurance}:
 $$
 \begin{aligned}
 E[R^{I}] &= E[\dfrac{r_c \times (C - P^{I}) - P^{I}}{C}]
 \end{aligned}
 $$
 
-We start equation \ref{eqn:return-ins} and develop the variance under the simplifying conditions described at the beginning of this section.
+We start with equation (\ref{eqn:return-ins}) and develop the variance under the simplifying conditions described at the beginning of this section.
 $$
 \begin{aligned}
 Var[R^{I}] &= Var(\dfrac{r_c \times (C - P^{I}) + r_f \times C_{x}^{I} - X_{ret} - P^{I}}{C})\\
@@ -67,15 +67,18 @@ Now we calculate the Sharpe Ratio under the insurance case:
 &=\dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} \label{eqn:sharpe-ins}
 \end{align}
 
-## Value Creation
-The insurance purchase created value when it results in an increase in the Sharpe Ratio. We can use equation \ref{eqn:sharpe-base} and equation \ref{eqn:sharpe-ins} to calculate the maximum premium that results in value creation. We present that equation below. We include the complete algebreic derivation in Appendix \ref{complete-algebreic-derivation-of-value-creation-equation}.
+## Complete Value Creation Equation
+The insurance purchase created value when it results in an increase in the Sharpe Ratio. We can use equation (\ref{eqn:sharpe-base}) and equation (\ref{eqn:sharpe-ins}) to calculate the maximum premium that results in value creation. We present that equation below. We include the complete algebraic derivation in Appendix \ref{complete-algebreic-derivation-of-value-creation-equation}.
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}^I &> \text{Sharpe Ratio}^0\\
 \nonumber \dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-C_{x}^{0})\times (r_c-r_f)}{SD(X)}\\
+\cdots &> \cdots\\
 P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right] \label{final}
 \end{align}
 
-The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation (\ref{eqn:cap-deploy}). However, we can recognize that first term on the righthand side is a measure of value of capital deployment from equation (\ref{eqn:cap-deploy}). Then the second terms becomes the value provided by reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further we its intuitive that the reduced reduction in risk would apply to the excess returns on working capital i.e., $((1 + r_c) \times C_{w}^{0})$.
+The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation (\ref{eqn:cap-deploy}). However, we can recognize that the first term on the righthand side is a measure of the value of capital deployment from equation (\ref{eqn:cap-deploy}). Then the second term is the value provided by the reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further, it is intuitive that the reduced reduction in risk would apply to the excess returns on working capital, i.e., $((1 + r_c) \times C_{w}^{0})$.
+
+We refer to equation (\ref{final}) as the "Complete Value Creation Equation" since it includes \emph{both} sources of value. We should not find this surprising since the Sharpe Ratio includes expected returns in its numerator and risk/volatility in the denominator. 
 
 

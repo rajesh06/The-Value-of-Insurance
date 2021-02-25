@@ -4,13 +4,17 @@ Through the analysis presented in the paper, we have developed a measurement of 
 
 * The value that results from the ability of the firm to deploy additional capital:
 
-$\dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0}$
+\begin{align}
+\dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0}
+\end{align}
 
 When premiums amounts satisfy equation (\ref{eqn:cap-deploy}), the insurance transaction will be accretive to the rate of return.
 
 * The value created through the reduced earnings expectations that result from  the reduction in volatility:
 
-$\dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right]$
+\begin{align}
+\dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right]
+\end{align}
 
 When premiums amounts do not satisfy equation (\ref{eqn:cap-deploy}) but satisfy equation (\ref{final}), the insurance transaction will will not be accretive to the rate of return. However, the reduced rate of return will be less than the reduction in the rate of return demanded by the shareholder.
 

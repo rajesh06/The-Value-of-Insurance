@@ -73,7 +73,7 @@ The insurance purchase created value when it results in an increase in the Sharp
 \begin{align}
 \nonumber \text{Sharpe Ratio}^I &> \text{Sharpe Ratio}^0\\
 \nonumber \dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-C_{x}^{0})\times (r_c-r_f)}{SD(X)}\\
-\cdots &> \cdots\\
+\nonumber \cdots &> \cdots\\
 P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right] \label{final}
 \end{align}
 

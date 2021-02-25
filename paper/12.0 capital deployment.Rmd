@@ -195,7 +195,7 @@ The insurance transaction creates value when the expected return for the insuran
 \begin{align}
 \nonumber E[R^I] &> E[R^0] \\
 \nonumber r_c \times (C - P^{I}) - P^{I} &> r_c \times C_{w}^{I} + r_f \times C_{x}^{0} \\
-\cdots &> \cdots\\
+\nonumber \cdots &> \cdots\\
 P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c} \label{eqn:cap-deploy}
 \end{align}
 

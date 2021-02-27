@@ -8,7 +8,7 @@ output:
   pdf_document: 
     fig_caption: yes
     number_sections: true
-abstract: "Insurance serves both as a source of loss reimbursement and contingent capital. The expected value of claims (i.e., loss reimbursement value) for the insured in high excess layers is minimal, so the principal value of insurance in those layers  is as a source of contingent capital. This paper describes an approach to measure this source of value." 
+abstract: "Insurance serves as a source of both loss reimbursement and contingent capital. The expected value of claims (i.e., loss reimbursement value) for the insured in high-excess layers is minimal, so the principal value of insurance in those layers  is as a source of contingent capital. This paper describes an approach to measure this source of value." 
 
 ---
 <!-- Set knitr options -->

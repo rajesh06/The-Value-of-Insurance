@@ -10,7 +10,7 @@ $$
 
 As we are concerned with the marginal value created by the insurance transaction, we can calculate $E(R)$, $Var(R)$ in this section under the following assumptions:
 
-* The risk-free rate, $r_f$, is fixed and    
+* The risk-free rate, $r_f$, is fixed.    
 * $X$ and $r_c$ are independent.
 
 ## Sharpe Ratio without insurance
@@ -77,8 +77,8 @@ The insurance purchase created value when it results in an increase in the Sharp
 P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right] \label{final}
 \end{align}
 
-The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation (\ref{eqn:cap-deploy}). However, we can recognize that the first term on the righthand side is a measure of the value of capital deployment from equation (\ref{eqn:cap-deploy}). Then the second term is the value provided by the reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further, it is intuitive that the reduced reduction in risk would apply to the excess returns on working capital, i.e., $((1 + r_c) \times C_{w}^{0})$.
+The interpretation of equation (\ref{final}) is slightly more difficult than that posed by equation (\ref{eqn:cap-deploy}). However, we can recognize that the first term on the righthand side is a measure of the value of capital deployment from equation (\ref{eqn:cap-deploy}). The second term is the value provided by the reduction in risk volatility, and we intuitively understand that $(1 - \dfrac{SD(X_{ret})}{SD(X)})$ is a representation of that reduction. Further, it is intuitive that the reduced reduction in risk would apply to the excess returns on working capital, i.e., $((1 + r_c) \times C_{w}^{0})$.
 
-We refer to equation (\ref{final}) as the "Complete Value Creation Equation" since it includes \emph{both} sources of value. We should not find this surprising since the Sharpe Ratio includes expected returns in its numerator and risk/volatility in the denominator. 
+We refer to equation (\ref{final}) as the Complete Value Creation Equation, since it includes \emph{both} sources of value. We should not find this surprising since the Sharpe Ratio includes expected returns in its numerator and risk/volatility in the denominator. 
 
 

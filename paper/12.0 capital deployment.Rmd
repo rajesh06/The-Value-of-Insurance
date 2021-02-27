@@ -1,7 +1,7 @@
 # Capital Deployment
-In this section, we describe how high-excess insurance allows the insured to deploy capital that it would otherwise need to set aside to weather an extreme loss event. 
+In this section, we describe how high-excess insurance allows the insured to deploy capital that it otherwise would need to set aside to weather an extreme loss event. 
 
-The analysis we present does not relate to the entire capital structure of the firm but rather only that portion allocated to activities that are subject to the risk of claims. In order to measure the value of insurance related to the firm's ability to deploy that capital, we compare rates of return when the firm "funds" the claims risk without insurance (i.e., with capital) and with insurance. 
+The analysis we present does not relate to the entire capital structure of the firm, but rather only to that portion allocated to activities that are subject to the risk of claims. To measure the value of insurance related to the firm's ability to deploy that capital, we compare rates of return when the firm "funds" the claims risk without insurance (i.e., with capital) and with insurance. 
 
 ## Funding Risk using Capital
 
@@ -41,14 +41,14 @@ We first present an analysis to demonstrate \emph{conceptually} why a firm would
 
 -   The firm is able to generate a return on capital of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
 
--   We denote the risk-free rate $r_f$.
+-   We denote the risk-free rate as $r_f$.
 
 
 ## Rate of Return without Insurance
 
 When a firm retains risk, it must allocate capital for that risk. The firm may allocate that capital with or without a formal analysis as to the amount of capital that it must set aside. In this section, we present an example of actions that a firm with an ERM strategy may take when faced with risk.  We recognize that not all firms will allocate capital using this type of analysis. 
 
-The firm's ERM strategy will require that it reserve capital for the possibility of that it experiences a capital depletion event. We denote this reserve as $C_{x}$ to indicate that the reserve is a segregation of capital to absorb realizations of $X$. We present that capital allocation approach in Figure \ref{fig:cap-deploy}.
+The firm's ERM strategy will require it to reserve capital for the possibility  that it experiences a capital depletion event. We denote this reserve as $C_{x}$ to indicate that the reserve is a segregation of capital to absorb realizations of $X$. We present that capital allocation approach in Figure \ref{fig:cap-deploy}.
 
 ```{r No Insurnace, echo=FALSE, fig.height=4, fig.width=6, message=FALSE, paged.print=FALSE, fig.cap="\\label{fig:cap-deploy}Capital Deployment"}
 par(mar = c(1, 1, 1, 1))
@@ -65,7 +65,7 @@ text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
 # Minimum working capital -----
 c_m <- 0.6 * scale
 text(x = center + c(0.00, 0.15), y = c_m, label = c('Minimum Working Capital, ', 
-  expression(C[`min`])), col = 'red' , 
+  expression(C[`m`])), col = 'red' , 
   pos = 3, cex = 0.7, adj = 0)
 abline(h = c_m, col = 'red', lty = 'dashed')
 
@@ -158,7 +158,7 @@ R^0 = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - X}{C} \label{eqn:retu
 
 The numerator is the sum of the return on working capital and the return on the reserve, less the value of the claim amount. The inclusion of the random variable $X$ indicates that the firm's return is a function of the realized value of the loss event.
 
-We note, however, that the expected value of $X$ in high excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations, we have:
+We note, however, that the expected value of $X$ in high-excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations, we have:
 
 \begin{equation}
 E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0}}{C} \label{eqn:exp-return-base}
@@ -166,11 +166,11 @@ E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0}}{C} \label{eqn:exp-r
 
 ## Rate of Return with Insurance
 
-The firm may alternatively elect to purchase insurance to cover a portion of the cost of the loss event. We develop that rate of return in this section. We use the following notation in our rate of return equation:
+The firm may alternatively elect to purchase insurance to cover a portion of the cost of the loss event. We develop that rate of return in this section. We use the following notation in our rate of return equation.
 
-* $X_{ret}$ represents the portion of the distribution of claims values that the firm retains. We allow $X_{ret}$ to vary between 0 (equal to the no insurance case) and $X_m$ (in which case, the firm fully transfers the risk). We observe that if retention will not reduce capital below $C_m$, i.e., $0 < X_{ret} < (C_w - C_m)$, then no capital need to be set aside to cover loss events, i.e., $C_x = 0$.
+* $X_{ret}$ represents the portion of the distribution of claims values that the firm retains. We allow $X_{ret}$ to vary between 0 (equal to the no-insurance case) and $X_m$ (in which the firm fully transfers the risk). We observe that if retention will not reduce capital below $C_m$, i.e., $0 < X_{ret} < (C_w - C_m)$, then no capital need to be set aside to cover loss events, i.e., $C_x = 0$.
 
-* We use superscript $I$ to represent the "insurance case." and $P^{I}$ for premium (in the insurance case). This is consistent with the $C_{x}^{0}$ notation that we use for capital. (They both represent approaches to fund risk.) 
+* We use superscript $I$ to represent the insurance case. and $P^{I}$ for premium (in the insurance case). This notation is consistent with the $C_{x}^{0}$ notation that we use for capital (They both represent approaches to fund risk). 
 
 The rate of return in the insurance case is as follows:
 

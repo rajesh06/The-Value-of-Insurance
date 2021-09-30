@@ -1,7 +1,7 @@
 # Capital Deployment
 In this section, we describe how high-excess insurance allows the insured to deploy capital that it otherwise would need to set aside to weather an extreme loss event. 
 
-The analysis we present does not relate to the entire capital structure of the firm, but rather only to that portion allocated to activities that are subject to the risk of claims. To measure the value of insurance related to the firm's ability to deploy that capital, we compare rates of return when the firm "funds" the claims risk without insurance (i.e., with capital) and with insurance. 
+The analysis we present does not relate to the entire capital structure of the firm, but rather only to that portion allocated to activities that are subject to the risk of insurable claims. Hereafter, all references to capital (which we later denote $C$) relate to this portion of the firm's capital structure. To measure the value of insurance related to the firm's ability to deploy that capital, we compare rates of return when the firm "funds" the claims risk without insurance (i.e., with capital) and with insurance. 
 
 ## Funding Risk using Capital
 
@@ -39,7 +39,7 @@ We first present an analysis to demonstrate \emph{conceptually} why a firm would
   
 - The firm has an enterprise risk management (ERM) strategy underlying its capital allocation. Its ERM strategy dictates that it can absorb a claim at the $p^{th}$ percentile of the distribution of $X$, which we denote as $X_p$.
 
--   The firm is able to generate a return on capital of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
+-   The firm is able to generate a return on capital, $C$^[The generic reference here is to capital deployed to support operations.],  of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
 
 -   We denote the risk-free rate as $r_f$.
 
@@ -65,7 +65,7 @@ text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
 # Minimum working capital -----
 c_m <- 0.6 * scale
 text(x = center + c(0.00, 0.15), y = c_m, label = c('Minimum Working Capital, ', 
-  expression(C[`m`])), col = 'red' , 
+  expression(C[`min`])), col = 'red' , 
   pos = 3, cex = 0.7, adj = 0)
 abline(h = c_m, col = 'red', lty = 'dashed')
 
@@ -143,7 +143,7 @@ text(x = center, y = mean(
   )), 
   label = expression(italic(C)[`X`]), cex = 0.7)
 
-text(x = center, y = 5, label = expression(italic(C)[`w`]), cex = 0.7, col = 'red')
+text(x = center, y = 8, label = expression(italic(C)[`w`]), cex = 0.7, col = 'red')
 
 text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
 
@@ -168,7 +168,7 @@ E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0}}{C} \label{eqn:exp-r
 
 The firm may alternatively elect to purchase insurance to cover a portion of the cost of the loss event. We develop that rate of return in this section. We use the following notation in our rate of return equation.
 
-* $X_{ret}$ represents the portion of the distribution of claims values that the firm retains. We allow $X_{ret}$ to vary between 0 (equal to the no-insurance case) and $X_m$ (in which the firm fully transfers the risk). We observe that if retention will not reduce capital below $C_m$, i.e., $0 < X_{ret} < (C_w - C_m)$, then no capital need to be set aside to cover loss events, i.e., $C_x = 0$.
+* $X_{ret}$ represents the portion of the distribution of claims values that the firm retains. We allow $X_{ret}$ to vary between 0 (equal to the no-insurance case) and $X_max$ (in which the firm fully transfers the risk). We observe that if retention will not reduce capital below $C_m$, i.e., $0 < X_{ret} < (C_w - C_m)$, then no capital need to be set aside to cover loss events, i.e., $C_x = 0$.
 
 * We use superscript $I$ to represent the insurance case. and $P^{I}$ for premium (in the insurance case). This notation is consistent with the $C_{x}^{0}$ notation that we use for capital (They both represent approaches to fund risk). 
 
@@ -194,7 +194,7 @@ The insurance transaction creates value when the expected return for the insuran
 
 \begin{align}
 \nonumber E[R^I] &> E[R^0] \\
-\nonumber r_c \times (C - P^{I}) - P^{I} &> r_c \times C_{w}^{I} + r_f \times C_{x}^{0} \\
+\nonumber r_c \times (C - P^{I}) - P^{I} &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} \\
 \nonumber \cdots &> \cdots\\
 P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c} \label{eqn:cap-deploy}
 \end{align}

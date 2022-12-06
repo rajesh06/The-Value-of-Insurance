@@ -1,17 +1,19 @@
 ---
 title: "On the Value of High-Excess Commercial Insurance"
 author:
-- Rajesh Sahasrabuddhe      
-- Zhenkai Zhu    
+- Author1      
+- Author2  
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
   pdf_document: 
     fig_caption: yes
     number_sections: true
+header-includes: \usepackage{setspace}\doublespacing
 abstract: "Insurance serves as a source of both loss reimbursement and contingent capital. The expected value of claims (i.e., loss reimbursement value) for the insured in high-excess layers is minimal, so the principal value of insurance in those layers  is as a source of contingent capital. This paper describes an approach to measure this source of value." 
 
 ---
 <!-- Set knitr options -->
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

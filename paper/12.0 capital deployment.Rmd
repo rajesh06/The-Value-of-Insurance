@@ -1,7 +1,7 @@
 # Capital Deployment
-In this section, we describe how high-excess insurance allows the insured to deploy capital that it otherwise would need to set aside to weather an extreme loss event. 
+In this section, we describe how high-excess insurance allows the insured to deploy capital that it otherwise would need to set aside to weather an extreme loss event. The analysis we present does not relate to the entire capital structure of the firm, but rather only to that portion allocated to activities that are subject to the risk of insurable claims. Hereafter, all references to capital (which we later denote $C$) relate to this portion of the firm's capital structure. 
 
-The analysis we present does not relate to the entire capital structure of the firm, but rather only to that portion allocated to activities that are subject to the risk of insurable claims. Hereafter, all references to capital (which we later denote $C$) relate to this portion of the firm's capital structure. To measure the value of insurance related to the firm's ability to deploy that capital, we compare rates of return when the firm "funds" the claims risk without insurance (i.e., with capital) and with insurance. 
+To measure the value of insurance related to the firm's ability to deploy that capital, we compare rates of return when the firm "funds" the claims risk without insurance (i.e., with capital) to rates of return when the firm transfers risk using insurance. 
 
 ## Funding Risk using Capital
 
@@ -35,11 +35,11 @@ We first present an analysis to demonstrate \emph{conceptually} why a firm would
     box()
     mtext(text = expression(italic(X)), side = 1, line = 0.5, cex = 0.7)
     mtext(text = 'Density', side = 2, line = 0.5, cex = 0.7)
-    ```
+```
   
 - The firm has an enterprise risk management (ERM) strategy underlying its capital allocation. Its ERM strategy dictates that it can absorb a claim at the $p^{th}$ percentile of the distribution of $X$, which we denote as $X_p$.
 
--   The firm is able to generate a return on capital, $C$^[The generic reference here is to capital deployed to support operations.],  of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
+-   The firm is able to generate a return on capital^[The generic reference here is to capital deployed to support operations.], $C$,  of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
 
 -   We denote the risk-free rate as $r_f$.
 
@@ -50,8 +50,23 @@ When a firm retains risk, it must allocate capital for that risk. The firm may a
 
 The firm's ERM strategy will require it to reserve capital for the possibility  that it experiences a capital depletion event. We denote this reserve as $C_{x}$ to indicate that the reserve is a segregation of capital to absorb realizations of $X$. We present that capital allocation approach in Figure \ref{fig:cap-deploy}.
 
+We offer the following extended comments on Figure \ref{fig:cap-deploy}. We refer to the sections of Figure \ref{fig:cap-deploy} as "blocks," and the names are below each block.
+
+* The first block represents the capital available to the firm.
+
+* The firm must maintain the minimum working capital denoted $C_{min}$ to continue operations. 
+
+* The firm has exposure to capital depletion events, $X$, as presented in Figure \ref{fig:clm-dist}. This "Exposure" block is the same Figure \ref{fig:clm-dist} rotated clockwise and scaled to the level of working capital, $C_w$ (described below).
+
+* The firm's ERM strategy supports business continuity for capital depletion events (i.e., claims or other loss events) of size $X_p$. Since $X_p$ is greater than $C_w - C_{min}$, the firm will need to set aside capital so that it can maintain $C_{min}$ if it were to experience a claim of $X_p$. The "Capital Segregation" block presents the amount that would need to be set aside.
+
+* We present final capital structure in the "Capital Allocation" block. The firm is able to deploy capital of $C_w$ (since it needed to set aside $C_x$). If it experiences a loss of $X_p$ (which, as noted, is from a claim distribution scaled to $C_w$), then its working capital would fall below $C_{min}$. The segregated capital, $C_x$, restores remaining working capital, $C_w - X_p$,  to $C_{min}$.
+  
+  We place the segregated capital, $C_x$, at the top of the capital allocation block. This presentation should not imply that the $C_x$ is accessed \emph{first} in the case of claim. Rather, in the event of a claim of size $X_p$, the firm would first deplete the working capital to $C_{min}$ and then fund the remainder of the claim with $C_x$. (Alternatively and equivalently, the firm would deplete capital below $C_{min}$ and then replenish using the set aside capital, $C_x$). We use this presentation to support the understanding of segregation of capital rather than the order of access.
+
+
 ```{r No Insurnace, echo=FALSE, fig.height=4, fig.width=6, message=FALSE, paged.print=FALSE, fig.cap="\\label{fig:cap-deploy}Capital Deployment"}
-par(mar = c(1, 1, 1, 1))
+par(mar = c(5, 1, 1, 1))
 
 scale <- 10
 
@@ -62,10 +77,16 @@ rect(xleft = center - 0.1, ybottom = 0, xright = center + 0.1, ytop = scale)
 #text(x = center, y = 3, label = 'Working Capital', cex = 0.7)
 text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
 
+# Block Labels in the Axis
+axis(side = 1, labels = c('Available\nCapital', 'Exposure', 'Capital\nSegregation',
+  'Capital\nAllocation'), at = c(1, 1.25, 1.50, 1.75), 
+  cex.axis = 0.7)
+
+
 # Minimum working capital -----
 c_m <- 0.6 * scale
 text(x = center + c(0.00, 0.15), y = c_m, label = c('Minimum Working Capital, ', 
-  expression(C[`min`])), col = 'red' , 
+  expression(italic(C)[`min`])), col = 'red' , 
   pos = 3, cex = 0.7, adj = 0)
 abline(h = c_m, col = 'red', lty = 'dashed')
 
@@ -141,9 +162,14 @@ text(x = center, y = mean(
   c(scale, 
     scale - (c_m - d_x[43])
   )), 
-  label = expression(italic(C)[`X`]), cex = 0.7)
+  label = expression(italic(C)[`x`]), cex = 0.7)
 
 text(x = center, y = 8, label = expression(italic(C)[`w`]), cex = 0.7, col = 'red')
+arrows(x0 = center, y0 = 8.2, y1 = scale - (c_m - d_x[43]), length = 0.10, 
+  x1 = center, lty = 'dashed', col = 'red', lwd = 0.7)
+arrows(x0 = center, y0 = 7.8, y1 = 0, length = 0.10, 
+  x1 = center, lty = 'dashed', col = 'red', lwd = 0.7)
+
 
 text(x = center, y = 1.05 * scale, label = 'Available Capital', cex = 0.7)
 
@@ -158,7 +184,7 @@ R^0 = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - X}{C} \label{eqn:retu
 
 The numerator is the sum of the return on working capital and the return on the reserve, less the value of the claim amount. The inclusion of the random variable $X$ indicates that the firm's return is a function of the realized value of the loss event.
 
-We note, however, that the expected value of $X$ in high-excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations, we have:
+As noted, \emph{from the insured's perspective}, the expected value of $X$ in high-excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations, we have:
 
 \begin{equation}
 E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0}}{C} \label{eqn:exp-return-base}
@@ -168,7 +194,7 @@ E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0}}{C} \label{eqn:exp-r
 
 The firm may alternatively elect to purchase insurance to cover a portion of the cost of the loss event. We develop that rate of return in this section. We use the following notation in our rate of return equation.
 
-* $X_{ret}$ represents the portion of the distribution of claims values that the firm retains. We allow $X_{ret}$ to vary between 0 (equal to the no-insurance case) and $X_max$ (in which the firm fully transfers the risk). We observe that if retention will not reduce capital below $C_m$, i.e., $0 < X_{ret} < (C_w - C_m)$, then no capital need to be set aside to cover loss events, i.e., $C_x = 0$.
+* $X_{ret}$ represents the portion of the distribution of claims values that the firm retains. We allow $X_{ret}$ to vary between 0 (in which the firm fully transfers the risk) and $X_{max}$ (equal to the no-insurance case). We observe that if the retention will not reduce capital below $C_min$, i.e., $0 < X_{ret} < (C_w - C_{min})$, then no capital would need to be set aside to cover loss events, i.e., $C_x = 0$.
 
 * We use superscript $I$ to represent the insurance case. and $P^{I}$ for premium (in the insurance case). This notation is consistent with the $C_{x}^{0}$ notation that we use for capital (They both represent approaches to fund risk). 
 
@@ -178,7 +204,7 @@ The rate of return in the insurance case is as follows:
 R^I = \dfrac{r_c \times (C - C_{x}^{I} - P^{I}) + r_f \times C_{x}^{I} - X_{ret} - P^{I}}{C} \label{eqn:return-ins}
 \end{equation}
 
-The rational firm (where $r_c > r_f$^[Without this condition there is no economic value to the firm's existence.]) purchases insurance such that it need not set aside any capital. Therefore, $C_{x}^{I} = 0$ and $C_{w}^{I} = C - P^{I}$.
+The rational firm (where $r_c > r_f$)^[Without this condition there is no economic value to the firm's existence.] purchases insurance such that it need not set aside any capital. Therefore, $C_{x}^{I} = 0$ and $C_{w}^{I} = C - P^{I}$.
 
 As we noted above, $E[X] \approx 0$. Therefore, $E[X_{ret}] \approx 0$ and $E[X - X_{ret}] \approx 0$. We can then simplify our rate of return equation to:
 

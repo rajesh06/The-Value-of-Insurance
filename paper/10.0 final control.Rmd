@@ -9,7 +9,7 @@ output:
     fig_caption: yes
     number_sections: true
 header-includes: \usepackage{setspace}\doublespacing
-abstract: "Insurance serves as a source of both loss reimbursement and contingent capital. The expected value of claims (i.e., loss reimbursement value) for the insured in high-excess layers is minimal, so the principal value of insurance in those layers  is as a source of contingent capital. This paper describes an approach to measure this source of value." 
+abstract: "Insurance serves as a source of both loss reimbursement and contingent capital. The expected value of claims (i.e., loss reimbursement value) for the insured in high-excess layers is minimal, so the principal value of insurance in those layers is as a source of contingent capital. This paper describes an approach to measure this source of value." 
 
 ---
 <!-- Set knitr options -->
@@ -29,6 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r child = here::here('paper', '12.0 capital deployment.Rmd')}
 ```
 
+
 <!-- Section 3: Required Rate of Return -->
 ```{r child = here::here('paper', '13.0 required rate of return.Rmd')}
 ```
@@ -36,7 +37,6 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- Section 4: Conclusion -->
 ```{r child = here::here('paper', '14.0 conclusion.Rmd')}
 ```
-
 
 \newpage
 \appendix
@@ -46,4 +46,3 @@ knitr::opts_chunk$set(echo = TRUE)
 \newpage
 ```{r child = here::here('paper', 'B-literature review.Rmd')}
 ```
-

@@ -21,8 +21,8 @@ Recall that we developed the expected rate of return in Section \ref{rate-of-ret
 
 $$
 \begin{aligned}
-E[R^{0}] &= E\left[\dfrac{r_c \times C_w^{0} + r_f \times C_{x}^{0}}{C}\right]\\
-&=\dfrac{(C-C_{x}^{0})\times r_c + r_f \times C_{x}^{0}}{C}\\
+E[R^{0}] &= E\left[\dfrac{r_c \times C_w^{0} + r_f \times C_{x}^{0} - X}{C}\right] \\
+&=\dfrac{(C-C_{x}^{0})\times r_c + r_f \times C_{x}^{0} - X}{C}\\
 \end{aligned}
 $$
 
@@ -38,16 +38,16 @@ We can now calculate the Sharpe Ratio without insurance.
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}^0 &=\frac{E(R_0)-r_f}{\sigma_{R_0}}\\
-\nonumber &=\dfrac{\left[\dfrac{(C-C_{x}^{0})\times r_c + r_f \times C_{x}^{0}-r_f \times C}{C}\right]}{\left[\dfrac{Var(X)}{C^2}\right]^{0.5}}\\
-           &=\frac{(C-C_{x}^{0})\times (r_c-r_f)}{SD(X)} \label{eqn:sharpe-base}
+\nonumber &=\dfrac{\left[\dfrac{(C-C_{x}^{0})\times r_c + E[X] + r_f \times C_{x}^{0}-r_f \times C}{C}\right]}{\left[\dfrac{Var(X)}{C^2}\right]^{0.5}}\\
+           &=\frac{(C-C_{x}^{0})\times (r_c-r_f) + E[X]}{SD(X)} \label{eqn:sharpe-base}
 \end{align}
 
 ## Sharpe Ratio with Insurance
 
-We can also calculate the Sharpe Ratio for the insurance buyer, using the superscript $I$ to represent this case. As with the no insurance case, we start with equation (\ref{eqn:exp-return-ins}) from Section\ref{rate-of-return-without-insurance}:
+We can also calculate the Sharpe Ratio for the insurance buyer, using the superscript $I$ to represent this case. As with the no insurance case, we start with equation (\ref{eqn:exp-return-ins}) from Section~\ref{rate-of-return-without-insurance}:
 $$
 \begin{aligned}
-E[R^{I}] &= E[\dfrac{r_c \times (C - P^{I}) - P^{I}}{C}]
+E[R^{I}] &= E[\dfrac{r_c \times (C - P^{I}) - P^{I} - X_{ret}}{C}]
 \end{aligned}
 $$
 
@@ -63,8 +63,8 @@ Now we calculate the Sharpe Ratio under the insurance case:
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}^I &= \dfrac{E(R_I)-r_f}{\sigma_{R^0}}\\
-\nonumber &=\dfrac{\left[\dfrac{(C - P^{I}) \times r_c-P^{I} - C \times r_f}{C}\right]}{\left[\dfrac{Var(X_{ret})}{C^2}\right]^{0.5}}\\
-&=\dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} \label{eqn:sharpe-ins}
+\nonumber &=\dfrac{\left[\dfrac{(C - P^{I}) \times r_c - X_{ret} - P^{I} - C \times r_f}{C}\right]}{\left[\dfrac{Var(X_{ret})}{C^2}\right]^{0.5}}\\
+&=\dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c) - X_{ret}}{SD(X_{ret})} \label{eqn:sharpe-ins}
 \end{align}
 
 ## Complete Value Creation Equation
@@ -72,7 +72,7 @@ The insurance purchase created value when it results in an increase in the Sharp
 
 \begin{align}
 \nonumber \text{Sharpe Ratio}^I &> \text{Sharpe Ratio}^0\\
-\nonumber \dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c)}{SD(X_{ret})} &> \dfrac{(C-C_{x}^{0})\times (r_c-r_f)}{SD(X)}\\
+\nonumber \dfrac{C\times (r_c-r_f)-P^{I} \times(1 + r_c) - X_{ret}}{SD(X_{ret})} &> \dfrac{(C-C_{x}^{0})\times (r_c-r_f) - X}{SD(X)}\\
 \nonumber \cdots &> \cdots\\
 P^{I} &< \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{x}^{0} + \dfrac{(r_c-r_f)}{(1 + r_c)} \times C_{w}^{0} \times \left[1 - \dfrac{SD(X_{ret})}{SD(X)}\right] \label{final}
 \end{align}

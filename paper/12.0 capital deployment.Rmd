@@ -39,7 +39,7 @@ We first present an analysis to demonstrate \emph{conceptually} why a firm would
   
 - The firm has an enterprise risk management (ERM) strategy underlying its capital allocation. Its ERM strategy dictates that it can absorb a claim at the $p^{th}$ percentile of the distribution of $X$, which we denote as $X_p$.
 
--   The firm is able to generate a return on capital^[The generic reference here is to capital deployed to support operations.], $C$,  of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
+-   The firm is able to generate a rate of return on capital^[The generic reference here is to capital deployed to support operations.] of $r_c$. For purposes of determining the value of insurance, we use a simplifying assumption that $r_c$ is fixed. That is, $E(r_c)=r_c$ and $Var(r_c)=0$. 
 
 -   We denote the risk-free rate as $r_f$.
 
@@ -48,9 +48,9 @@ We first present an analysis to demonstrate \emph{conceptually} why a firm would
 
 When a firm retains risk, it must allocate capital for that risk. The firm may allocate that capital with or without a formal analysis as to the amount of capital that it must set aside. In this section, we present an example of actions that a firm with an ERM strategy may take when faced with risk.  We recognize that not all firms will allocate capital using this type of analysis. 
 
-The firm's ERM strategy will require it to reserve capital for the possibility  that it experiences a capital depletion event. We denote this reserve as $C_{x}$ to indicate that the reserve is a segregation of capital to absorb realizations of $X$. We present that capital allocation approach in Figure \ref{fig:cap-deploy}.
+The firm's ERM strategy will require it to reserve capital for the possibility  that it experiences a capital depletion event. We denote this reserve as $C_{x}$ to indicate that the reserve is a segregation of capital to absorb realizations of $X$. 
 
-We offer the following extended comments on Figure \ref{fig:cap-deploy}. We refer to the sections of Figure \ref{fig:cap-deploy} as "blocks," and the names are below each block.
+We present that capital allocation approach in Figure \ref{fig:cap-deploy}and offer the following extended comments. We refer to the sections of Figure \ref{fig:cap-deploy} as "blocks," and the names are below each block.
 
 * The first block represents the capital available to the firm.
 
@@ -184,10 +184,10 @@ R^0 = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - X}{C} \label{eqn:retu
 
 The numerator is the sum of the return on working capital and the return on the reserve, less the value of the claim amount. The inclusion of the random variable $X$ indicates that the firm's return is a function of the realized value of the loss event.
 
-As noted, \emph{from the insured's perspective}, the expected value of $X$ in high-excess layers is nearly 0. That is, $E[X] \approx 0$. As s result, taking expectations, we have:
+Taking expectations, we have:
 
 \begin{equation}
-E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0}}{C} \label{eqn:exp-return-base}
+E[R^0] = \dfrac{r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - E[X]}{C} \label{eqn:exp-return-base}
 \end{equation}
 
 ## Rate of Return with Insurance
@@ -206,13 +206,17 @@ R^I = \dfrac{r_c \times (C - C_{x}^{I} - P^{I}) + r_f \times C_{x}^{I} - X_{ret}
 
 The rational firm (where $r_c > r_f$)^[Without this condition there is no economic value to the firm's existence.] purchases insurance such that it need not set aside any capital. Therefore, $C_{x}^{I} = 0$ and $C_{w}^{I} = C - P^{I}$.
 
-As we noted above, $E[X] \approx 0$. Therefore, $E[X_{ret}] \approx 0$ and $E[X - X_{ret}] \approx 0$. We can then simplify our rate of return equation to:
+We recognize that $P^{I}$ is the sum of the expected loss $E[X - X_{ret}]$ and an insurance charge, $IC$. The insurance charge includes a provision for both insurer expenses and a capital charge.
 
-\begin{equation}
-E[R^I] = \dfrac{r_c \times (C - P^{I}) - P^{I}}{C} \label{eqn:exp-return-ins}
-\end{equation}
+Taking expectations and simplifying our rate of return equation, we have:
 
-We recognize that $P^{I}$ is the sum of the expected loss $E[X - X_{ret}]$ and an insurance charge. As noted, the expected loss is approximately $0$. The insurance charge compensates the insurer for underwriting the exposure and provides for a return on its capital. Therefore we expect the insurance charge to be a \emph{function} of $Var(X - X_{ret})$.^[We recognize that the insurer has the ability to diversify this volatility across risks. As a result the function referenced can result in a premiums that creates value.] In our construct, the prospective insured only observes premiums quoted under various options. As such, it is not concerned with the function the insurer uses to develop its risk charge, but it is aware that the premium is almost entirely comprised of the risk charge.
+\begin{align}
+\nonumber E[R^I] &= \dfrac{r_c \times (C - P^{I}) - E[X_{ret}] - P^{I}}{C} \\
+\nonumber E[R^I] = \dfrac{r_c \times (C - P^{I}) - E[X_{ret}] - (E[X - X_{ret}] + IC)}{C}\\
+E[R^I] = \dfrac{r_c \times (C - P^{I}) - E[X] - IC)}{C} \label{eqn:exp-return-ins}
+\end{align}
+
+As noted, the expected loss is approximately $0$. The insurance charge compensates the insurer for underwriting the exposure and provides for a return on its capital. Therefore we expect the insurance charge to be a \emph{function} of $Var(X - X_{ret})$.^[We recognize that the insurer has the ability to diversify this volatility across risks. As a result the function referenced can result in a premiums that creates value.] In our construct, the prospective insured only observes premiums quoted under various options. As such, it is not concerned with the function the insurer uses to develop its risk charge, but it is aware that the premium includes a significant risk charge.
 
 ## Capital Deployment Value Creation Equation
 
@@ -220,11 +224,11 @@ The insurance transaction creates value when the expected return for the insuran
 
 \begin{align}
 \nonumber E[R^I] &> E[R^0] \\
-\nonumber r_c \times (C - P^{I}) - P^{I} &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} \\
+\nonumber r_c \times (C - P^{I}) - E[X_{ret}] - P^{I} &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - E[X] \\
 \nonumber \cdots &> \cdots\\
-P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c} \label{eqn:cap-deploy}
+P^{I} &<  \dfrac{C_{x}^{0} \times (r_c - r_f) +  X_XS}{1 + r_c} \label{eqn:cap-deploy}
 \end{align}
 
 We include the complete algebraic derivation of equation \ref{eqn:cap-deploy} in Appendix \ref{algebraic-derivation-of-value-creation-equations}. 
-Equation (\ref{eqn:cap-deploy}) has a straightforward, intuitive interpretation that the insurance transaction creates value when the premium is less than the excess return on capital that would be earned on the reserve reduced for the return if the premium amount were also deployed as capital.
+Equation (\ref{eqn:cap-deploy}) has a straightforward, intuitive interpretation that the insurance transaction creates value when the premium is less than the excess return on capital,$(r_c - r_f)$,  that would be earned on the reserve, $C_{x}^{0}$ and the insured loss $X_XS$, reduced for the return if the premium amount were also deployed as capital, $\times (1 + r_c)$.
 

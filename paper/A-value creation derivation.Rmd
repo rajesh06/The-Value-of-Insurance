@@ -3,11 +3,13 @@
 ## Derivation of Capital Deployment Value Creation Equation
 \begin{align}
 \nonumber E[R^I] &> E[R^0] \\
-\nonumber r_c \times (C - P^{I}) - P^{I} &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} \\
-\nonumber r_c \times C - r_c \times P^{I} - P^{I} &>  r_c \times C_{w}^{0} + r_f \times C_{x}^{0}\\
-\nonumber -P^{I} \times (1 + r_c) &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - r_c \times C\\
-\nonumber -P^{I} \times (1 + r_c) &> r_c \times (C_{w}^{0} - C) + r_f \times C_{x}^{0}\\
-\nonumber -P^{I} &> \dfrac{r_c \times (C_{w}^{0} - C) + r_f \times C_{x}^{0}}{1 + r_c}\\
+\nonumber r_c \times (C - P^{I}) - E[X_{ret}] - P^{I} &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - E[X] \\
+\nonumber r_c \times C - r_c \times P^{I} - E[X_{ret}] - P^{I} &>  r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - E[X]\\
+\nonumber -r_c \times P^{I} - P^{I} &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - E[X] + E[X_ret] - r_c \times C \\
+\nonumber -P^{I} \times (1 + R_c) &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - (E[X] - E[X_ret]) - r_c \times C \\
+\nonumber -P^{I} \times (1 + R_c) &> r_c \times C_{w}^{0} + r_f \times C_{x}^{0} - E[X_XS] - r_c \times C \\
+\nonumber -r_c \times P^{I} - P^{I} &> r_c \times (C_{w}^{0} - C) + r_f \times C_{x}^{0} + IC\\
+\nonumber -P^{I} &> \dfrac{r_c \times (C_{w}^{0} - C) + r_f \times C_{x}^{0} + IC}{r_c}\\
 \nonumber -P^{I} &> \dfrac{r_c \times (-C_{x}^{0}) + r_f \times C_{x}^{0}}{1 + r_c}\\
 \nonumber -P^{I} &> C_{x}^{0} \times \dfrac{r_f - r_c}{1 + r_c}\\
 P^{I} &< C_{x}^{0} \times \dfrac{r_c - r_f}{1 + r_c}
